@@ -1,0 +1,64 @@
+# macos
+# =============================================
+.DS_Store
+
+# node
+# =============================================
+node_modules
+public/glb/*.glb
+public/hdr/*.hdr
+public/texture/
+public/terrain/heightmap-rendered.png
+public/img
+public/svg
+src/jsx/test.html
+src/jsx/production/test.jsx
+
+# vite
+# =============================================
+dist
+.vite
+stats.html
+dist-ssr
+*.local
+
+# js
+# =============================================
+.eslintcache
+
+# css
+# =============================================
+.sass-cache
+.sass-cache/*
+*.css.map
+*.sass.map
+*.scss.map
+
+# build folder
+# =============================================
+build/
+
+# log
+# =============================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# workspace
+# =============================================
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+LearnArabic.code-workspace
+public/vite.svg
+src/assets/react.svg
