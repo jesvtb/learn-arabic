@@ -1,0 +1,254 @@
+[
+    {
+        "id": "1",
+        "alphabet": "ا",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "2",
+        "alphabet": "ب",
+        "formgroup": "fg-1",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "3",
+        "alphabet": "ت",
+        "formgroup": "fg-1",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "4",
+        "alphabet": "ث",
+        "formgroup": "fg-1",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "5",
+        "alphabet": "ج",
+        "formgroup": "fg-2",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "6",
+        "alphabet": "ح",
+        "formgroup": "fg-2",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "7",
+        "alphabet": "خ",
+        "formgroup": "fg-2",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "8",
+        "alphabet": "د",
+        "formgroup": "fg-3",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "9",
+        "alphabet": "ذ",
+        "formgroup": "fg-3",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "10",
+        "alphabet": "ر",
+        "formgroup": "fg-4",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "11",
+        "alphabet": "ز",
+        "formgroup": "fg-4",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "12",
+        "alphabet": "س",
+        "formgroup": "fg-5",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "13",
+        "alphabet": "ش",
+        "formgroup": "fg-5",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "14",
+        "alphabet": "ص",
+        "formgroup": "fg-6",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "15",
+        "alphabet": "ض",
+        "formgroup": "fg-6",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "16",
+        "alphabet": "ط",
+        "formgroup": "fg-7",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "سل*ط*نه",
+        "finalinword": ""
+    },
+    {
+        "id": "17",
+        "alphabet": "ظ",
+        "formgroup": "fg-7",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "18",
+        "alphabet": "ع",
+        "formgroup": "fg-8",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "19",
+        "alphabet": "غ",
+        "formgroup": "fg-8",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "20",
+        "alphabet": "ف",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "21",
+        "alphabet": "ق",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "22",
+        "alphabet": "ك",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "23",
+        "alphabet": "ل",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "24",
+        "alphabet": "م",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "25",
+        "alphabet": "ن",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "26",
+        "alphabet": "ه",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "27",
+        "alphabet": "و",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    },
+    {
+        "id": "28",
+        "alphabet": "ي",
+        "formgroup": "fg-0",
+        "pronounciation": "",
+        "initialinword": "",
+        "medialinword": "",
+        "finalinword": ""
+    }
+]

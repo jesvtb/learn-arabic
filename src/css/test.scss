@@ -1,0 +1,168 @@
+@use 'identity' as i;
+
+body {
+    background: rgb(25, 24, 24);
+}
+
+.target-lang {
+    font-weight: 300;
+    direction: rtl;
+    line-height: 0.6em;
+}
+
+.sans {
+    font-family: var(--sans-AR);
+}
+
+.serif {
+    font-family: var(--serif-AR);
+}
+
+.title {
+    font-size: var(--step-4);
+    color: var(--color1-90);
+    text-transform: capitalize;
+    text-align: center;
+    // text-decoration: underline;
+    margin-top: var(--space-3xl);
+}
+
+.base-lang {
+    font-family: var(--sans-EN);
+}
+
+.letters-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    column-gap: var(--space-xl);
+    padding: 0 10vw;
+    .letter-group {
+        display: inline-block;
+    }
+}
+
+.letter-base {
+    font-size: var(--step-6);
+}
+
+// letter base action after hover
+// ==================================================
+
+.letter-group {
+    .letter-base {
+        &::after {
+            // border: 2px solid red; // XXXX debug ⚠
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            height: 5%;
+            width: 150%;
+            left: -20%;
+            @include i.motion-1;
+            border-radius: 5px;
+            background: var(--color1-90);
+            transform-origin: bottom left;
+            transition-property: transform;
+            // z-index: -1;
+            @include i.crossBrowser(transform, scaleX(0));
+        }
+    }
+    &:hover {
+        .letter-base {
+            color: var(--color1-90);
+            &::after {
+                @include i.crossBrowser(transform, scaleX(1));
+            }
+        }
+    }
+}
+
+// toooltip action after letter hover
+// ==================================================
+
+.letter-group {
+    position: relative;
+    .tooltip {
+        display: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    &:hover {
+        .tooltip {
+            display: none;
+            width: 20vw;
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-2xs);
+            background: var(--color1-10);
+            z-index: 1;
+            position: absolute;
+            top: 85%;
+            left: -7vw;
+            border-radius: 4px;
+            justify-content: space-around;
+        }
+    }
+}
+
+.form-in-word {
+    font-size: var(--step-4);
+    color: grey;
+    direction: rtl;
+    em,
+    span {
+        color: var(--color1-90);
+        font-style: normal;
+        font-weight: 300;
+    }
+}
+
+.form.group {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    .base-lang {
+        color: var(--color2-80);
+        font-size: var(--step-0);
+    }
+    .target-lang {
+        color: var(--color2-40);
+        font-size: var(--step-4);
+        line-height: 0.3em;
+    }
+    &:nth-of-type(1) {
+        span:nth-of-type(1) {
+            color: var(--color3-90);
+            display: none;
+        }
+    }
+    &:nth-of-type(3) {
+        span:nth-of-type(2) {
+            color: var(--color3-90);
+            display: none;
+        }
+    }
+}
+
+@for $i from 1 through 9 {
+    .fg-#{$i} {
+        h1 {
+            $hue: $i * 80;
+            color: hsl($hue, 50%, 50%);
+        }
+    }
+}
+
+.fg-0 .letter-base {
+    color: grey;
+}
+
+label {
+    color: var(--color1-90);
+    font-size: var(--step-2);
+    font-weight: 300;
+    margin-bottom: var(--space-xs);
+}
