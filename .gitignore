@@ -62,3 +62,7 @@ lerna-debug.log*
 LearnArabic.code-workspace
 public/vite.svg
 src/assets/react.svg
+src/index.css
+src/css/test.css
+src/css/identity.css
+src/css/reset.css
