@@ -1,18 +1,31 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { marked } from 'marked';
+import { Link, useLocation, Route, useParams } from 'wouter';
 
 export function Alphabet() {
     const [selectedFont, setSelectedFont] = useState('');
+    const [selectedForm, setSelectedForm] = useState('');
 
     const handleFontChange = (selectedValue) => {
         setSelectedFont(selectedValue);
     };
 
+    const handleFormChange = (selectedValue) => {
+        setSelectedForm(selectedValue);
+    };
+
     return (
         <>
-            <SelectFont onSelectFont={handleFontChange} />
-            <MapLetters selectedFont={selectedFont} />
+            <Title />
+            <div className="menu">
+                <SelectFont onSelectFont={handleFontChange} />
+                <SelectForm onSelectForm={handleFormChange} />
+            </div>
+            <MapLetters
+                selectedFont={selectedFont}
+                selectedForm={selectedForm}
+            />
         </>
     );
 }
@@ -25,7 +38,7 @@ function SelectFont({ onSelectFont }) {
 
     return (
         <label>
-            select font type
+            <p className="base-lang">select font type</p>
             <select
                 name="selectedFont"
                 onChange={handleFontChange}
@@ -37,7 +50,33 @@ function SelectFont({ onSelectFont }) {
     );
 }
 
-function MapLetters({ selectedFont }) {
+function SelectForm({ onSelectForm }) {
+    const handleFormChange = (event) => {
+        const selectedValue = event.target.value;
+        onSelectForm(selectedValue);
+    };
+
+    return (
+        <label>
+            <p className="base-lang">select form type</p>
+            <select
+                name="selectedForm"
+                onChange={handleFormChange}
+            >
+                <option value="alone">alone</option>
+                <option value="initial">initial</option>
+                <option value="medial">medial</option>
+                <option value="final">final</option>
+            </select>
+        </label>
+    );
+}
+
+function Title() {
+    return <div className="base-lang title">arabic alphabet basics</div>;
+}
+
+function MapLetters({ selectedFont, selectedForm }) {
     const [letters, setLetters] = useState([]);
 
     useEffect(() => {
@@ -58,9 +97,10 @@ function MapLetters({ selectedFont }) {
         fetchData();
     }, []);
 
+    const [, navigate] = useLocation();
+
     return (
         <>
-            <div className="base-lang title">arabic alphabet basics</div>
             <div className="letters-wrapper">
                 {letters.map((letter, i) => {
                     const formgroup = letter.formgroup;
@@ -71,13 +111,19 @@ function MapLetters({ selectedFont }) {
                             key={i}
                             className={`letter-group ${formgroup}`}
                         >
-                            <a href="">
+                            <Link
+                                to={`/letter/${letter.id}`}
+                                // href={`/letter/${letter.id}`}
+                                // onClick={redirectToPage()}
+                            >
                                 <h1
-                                    className={`letter-base target-lang ${selectedFont}`}
+                                    className={`letter-base target-lang ${selectedFont} ${selectedForm}`}
                                 >
+                                    <span>ـ</span>
                                     {letter.alphabet}
+                                    <span>ـ</span>
                                 </h1>
-                            </a>
+                            </Link>
 
                             <div className="tooltip">
                                 <div className="form group">
@@ -116,5 +162,16 @@ function MapLetters({ selectedFont }) {
                 })}
             </div>
         </>
+    );
+}
+
+export function LetterPage() {
+    const { id } = useParams();
+
+    return (
+        <div className="letter-page">
+            <h1>Data Details Page</h1>
+            <p>Display the content for id: {id}</p>
+        </div>
     );
 }
