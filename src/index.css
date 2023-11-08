@@ -501,18 +501,40 @@ body {
   background: rgb(25, 24, 24);
 }
 
-.target-lang {
+.lang-ar {
   font-weight: 300;
   direction: rtl;
   line-height: 0.6em;
 }
 
-.sans {
-  font-family: var(--sans-AR);
+.lang-gr {
+  font-weight: 200;
 }
 
-.serif {
-  font-family: var(--serif-AR);
+.lang-gr.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.lang-gr.sans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.lang-gr.letter-base span:first-of-type {
+  text-transform: capitalize;
+}
+.lang-gr.letter-base.lowercase span:first-of-type {
+  display: none;
+}
+.lang-gr.letter-base.uppercase span:last-of-type {
+  display: none;
+}
+
+.lang-ar.sans {
+  font-family: var(--sans-AR) !important;
+}
+
+.lang-ar.serif {
+  font-family: var(--serif-AR) !important;
 }
 
 .title {
@@ -529,7 +551,6 @@ body {
 
 .letters-wrapper {
   display: flex;
-  flex-direction: row-reverse;
   flex-wrap: wrap;
   column-gap: var(--space-xl);
   padding: 0 10vw;
@@ -538,10 +559,15 @@ body {
   display: inline-block;
 }
 
+.letters-wrapper .lang-ar {
+  flex-direction: row-reverse;
+}
+
 .letter-base {
   font-size: var(--step-5);
 }
-.letter-base::after {
+
+.letter-base.lang-ar::after {
   content: " َ";
 }
 
@@ -570,6 +596,7 @@ body {
   transform: scaleX(0);
 }
 .letter-group:hover .letter-base {
+  cursor: pointer;
   color: var(--color1-90);
 }
 .letter-group:hover .letter-base::after {
@@ -624,7 +651,7 @@ body {
   color: var(--color2-80);
   font-size: var(--step-0);
 }
-.form.group .target-lang {
+.form.group .lang-ar {
   color: var(--color2-40);
   font-size: var(--step-4);
   line-height: 0.3em;
@@ -674,7 +701,7 @@ body {
   color: hsl(0, 50%, 50%);
 }
 
-.fg-0 .letter-base {
+.letter-base {
   color: grey;
 }
 

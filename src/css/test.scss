@@ -4,18 +4,48 @@ body {
     background: rgb(25, 24, 24);
 }
 
-.target-lang {
+.lang-ar {
     font-weight: 300;
     direction: rtl;
     line-height: 0.6em;
 }
 
-.sans {
-    font-family: var(--sans-AR);
+.lang-gr {
+    font-weight: 200;
 }
 
-.serif {
-    font-family: var(--serif-AR);
+.lang-gr.serif {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lang-gr.sans {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+}
+
+.lang-gr.letter-base {
+    span:first-of-type {
+        text-transform: capitalize;
+    }
+    &.lowercase {
+        span:first-of-type {
+            display: none;
+        }
+    }
+    &.uppercase {
+        span:last-of-type {
+            display: none;
+        }
+    }
+}
+
+.lang-ar.sans {
+    font-family: var(--sans-AR) !important;
+    // border: 2px solid red; // XXXX debug ⚠
+}
+
+.lang-ar.serif {
+    font-family: var(--serif-AR) !important;
 }
 
 .title {
@@ -33,7 +63,6 @@ body {
 
 .letters-wrapper {
     display: flex;
-    flex-direction: row-reverse;
     flex-wrap: wrap;
     column-gap: var(--space-xl);
     padding: 0 10vw;
@@ -42,8 +71,17 @@ body {
     }
 }
 
+.letters-wrapper .lang-ar {
+    flex-direction: row-reverse;
+}
+
 .letter-base {
     font-size: var(--step-5);
+}
+
+.letter-base.lang-ar {
+    // border: 2px solid red; // XXXX debug ⚠
+
     &::after {
         content: ' َ';
     }
@@ -73,6 +111,7 @@ body {
     }
     &:hover {
         .letter-base {
+            cursor: pointer;
             color: var(--color1-90);
             &::after {
                 @include i.crossBrowser(transform, scaleX(1));
@@ -131,7 +170,7 @@ body {
         color: var(--color2-80);
         font-size: var(--step-0);
     }
-    .target-lang {
+    .lang-ar {
         color: var(--color2-40);
         font-size: var(--step-4);
         line-height: 0.3em;
@@ -159,7 +198,7 @@ body {
     }
 }
 
-.fg-0 .letter-base {
+.letter-base {
     color: grey;
 }
 
