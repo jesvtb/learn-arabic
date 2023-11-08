@@ -1,11 +1,14 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200&family=Playfair+Display:wght@400;600&family=Roboto+Condensed:wght@100;200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300&family=Noto+Naskh+Arabic&family=Noto+Sans+Arabic:wght@300;400&display=swap");
 :root {
+  --serif-AR: "Noto Naskh Arabic", serif;
+  -sans-ar: "Noto Sans Arabic", sans-serif;
   --display: "Playfair Display", serif;
   --serif: "Noto Naskh Arabic", serif;
   --sans: "Roboto Condensed", sans-serif;
   --sans-EN: "Mukta", sans-serif;
-  --number: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --number: "Gill Sans", "Gill Sans MT", calibri, "Trebuchet MS", sans-serif;
+  --number: "Noto Serif SC", serif;
 }
 
 /* @link https://utopia.fyi/type/calculator?c=360,14,1.125,1366,16,1.414,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */
@@ -80,8 +83,8 @@
   --color3-80-opaque: hsla(8, 100%, 21%, 20%);
   --color-100: rgba(255, 255, 255);
   --color-100-opaque: rgba(255, 255, 255, 0%);
-  --color-001: black;
-  --color-001: hsla(0, 0%, 0%, 30%);
+  --color-001: rgb(24, 24, 34);
+  --color-001-opaque: hsla(0, 0%, 0%, 30%);
 }
 
 /* @link https://utopia.fyi/space/calculator?c=360,12,1.125,1366,14,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */
@@ -187,7 +190,30 @@
 }
 
 body {
-  background: rgb(25, 24, 24);
+  background: var(--color-001);
+}
+@media only screen and (orientation: landscape) {
+  body {
+    padding: var(--space-l) var(--space-2xl);
+  }
+}
+@media only screen and (orientation: portrait) {
+  body {
+    padding: var(--space-m) var(--space-m);
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  #root {
+    display: flex;
+    gap: var(--space-xl);
+  }
+}
+@media only screen and (orientation: portrait) {
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .lang-ar {
@@ -226,14 +252,6 @@ body {
   font-family: var(--serif-AR) !important;
 }
 
-.title {
-  font-size: var(--step-4);
-  color: var(--color1-90);
-  text-transform: capitalize;
-  text-align: center;
-  margin-top: var(--space-l);
-}
-
 .base-lang {
   font-family: var(--sans-EN);
 }
@@ -243,7 +261,7 @@ body {
   flex-wrap: wrap;
   -moz-column-gap: var(--space-xl);
        column-gap: var(--space-xl);
-  padding: 0 10vw;
+  padding: 0 var(--space-s);
 }
 .letters-wrapper .letter-group {
   display: inline-block;
@@ -253,8 +271,10 @@ body {
   flex-direction: row-reverse;
 }
 
-.letter-base {
-  font-size: var(--step-5);
+@media only screen and (orientation: landscape) {
+  .letter-base {
+    font-size: var(--step-5);
+  }
 }
 
 .letter-base.lang-ar::after {
@@ -277,6 +297,7 @@ body {
   transform: scaleX(0);
 }
 .letter-group:hover .letter-base {
+  cursor: pointer;
   cursor: pointer;
   color: var(--color1-90);
 }
@@ -330,6 +351,7 @@ body {
   font-size: var(--step-0);
 }
 .form.group .lang-ar {
+.form.group .lang-ar {
   color: var(--color2-40);
   font-size: var(--step-4);
   line-height: 0.3em;
@@ -380,6 +402,7 @@ body {
 }
 
 .letter-base {
+.letter-base {
   color: grey;
 }
 
@@ -395,15 +418,80 @@ body {
   display: none;
 }
 
-@media only screen and (orientation: landscape) {
-  .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+.title {
+  font-size: var(--step-4);
+  color: var(--color1-90);
+  text-transform: capitalize;
 }
 
-label {
+.menu {
+  display: flex;
+}
+.menu .selection {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (orientation: landscape) {
+  .menu {
+    flex-direction: column;
+    padding-right: var(--space-l);
+    gap: var(--space-s);
+    border-right: 1px solid var(--color1-40);
+  }
+  .menu .selection {
+    gap: var(--space-xs);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .menu {
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: var(--space-l);
+    gap: var(--space-s);
+    border-bottom: 1px solid var(--color1-40);
+  }
+  .menu .selection {
+    gap: var(--space-xs);
+  }
+}
+.menu label {
+  position: relative;
+  display: flex;
+  width: 11em;
+  height: var(--space-xl);
+  line-height: 3;
+  background: var(--color1-10);
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+.menu label::after {
+  content: "▼";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: var(--color1-10);
+  color: var(--color1-80);
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+.menu select {
+  width: 10em;
+  border: none;
+  outline: 0;
+  text-transform: capitalize;
+  color: var(--color1-80);
+  padding: var(--space-2xs) var(--space-s);
+  cursor: pointer;
+  background: var(--color1-10);
+}
+.menu select:hover {
+  background-color: transparent;
   color: var(--color1-90);
-  font-size: var(--step-1);
+}
+.menu select:active {
+  border: none;
 }

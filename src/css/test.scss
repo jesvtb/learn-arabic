@@ -1,7 +1,24 @@
 @use 'identity' as i;
 
 body {
-    background: rgb(25, 24, 24);
+    background: var(--color-001);
+    @include i.landscape {
+        padding: var(--space-l) var(--space-2xl);
+    }
+    @include i.portrait {
+        padding: var(--space-m) var(--space-m);
+    }
+}
+
+#root {
+    @include i.landscape {
+        display: flex;
+        gap: var(--space-xl);
+    }
+    @include i.portrait {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .lang-ar {
@@ -48,15 +65,6 @@ body {
     font-family: var(--serif-AR) !important;
 }
 
-.title {
-    font-size: var(--step-4);
-    color: var(--color1-90);
-    text-transform: capitalize;
-    text-align: center;
-    // text-decoration: underline;
-    margin-top: var(--space-l);
-}
-
 .base-lang {
     font-family: var(--sans-EN);
 }
@@ -65,7 +73,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     column-gap: var(--space-xl);
-    padding: 0 10vw;
+    padding: 0 var(--space-s);
+
     .letter-group {
         display: inline-block;
     }
@@ -75,13 +84,17 @@ body {
     flex-direction: row-reverse;
 }
 
+.letters-wrapper .lang-ar {
+    flex-direction: row-reverse;
+}
+
 .letter-base {
-    font-size: var(--step-5);
+    @include i.landscape {
+        font-size: var(--step-5);
+    }
 }
 
 .letter-base.lang-ar {
-    // border: 2px solid red; // XXXX debug ⚠
-
     &::after {
         content: ' َ';
     }
@@ -93,7 +106,6 @@ body {
 .letter-group {
     .letter-base {
         &::after {
-            // border: 2px solid red; // XXXX debug ⚠
             content: '';
             position: absolute;
             bottom: 20%;
@@ -111,6 +123,7 @@ body {
     }
     &:hover {
         .letter-base {
+            cursor: pointer;
             cursor: pointer;
             color: var(--color1-90);
             &::after {
@@ -199,6 +212,7 @@ body {
 }
 
 .letter-base {
+.letter-base {
     color: grey;
 }
 
@@ -225,19 +239,82 @@ body {
     }
 }
 
-.menu {
-    @include i.landscape {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
+.title {
+    font-size: var(--step-4);
+    color: var(--color1-90);
+    text-transform: capitalize;
+    // text-align: center;
+    // text-decoration: underline;
+    // margin-top: var(--space-l);
 }
 
-label {
-    color: var(--color1-90);
-    font-size: var(--step-1);
-    // font-weight: 300;
-    // margin-bottom: var(--space-xs);
+.menu {
+    display: flex;
+    .selection {
+        display: flex;
+        flex-direction: column;
+    }
+    @include i.landscape {
+        flex-direction: column;
+        padding-right: var(--space-l);
+        gap: var(--space-s);
+        border-right: 1px solid var(--color1-40);
+        .selection {
+            gap: var(--space-xs);
+        }
+    }
+    @include i.portrait {
+        position: sticky;
+        top: 0;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: var(--space-l);
+        gap: var(--space-s);
+        border-bottom: 1px solid var(--color1-40);
+        .selection {
+            gap: var(--space-xs);
+        }
+    }
+    label {
+        position: relative;
+        display: flex;
+        width: 11em;
+        height: var(--space-xl);
+        line-height: 3;
+        background: var(--color1-10);
+        overflow: hidden;
+        border-radius: 0.25em;
+        &::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 1em;
+            background: var(--color1-10);
+            color: var(--color1-80);
+            cursor: pointer;
+            pointer-events: none;
+            transition: 0.25s all ease;
+        }
+    }
+    select {
+        width: 10em;
+        border: none;
+        // margin: 0 auto;
+        outline: 0;
+        text-transform: capitalize;
+        color: var(--color1-80);
+        padding: var(--space-2xs) var(--space-s);
+        cursor: pointer;
+        background: var(--color1-10);
+        &:hover {
+            background-color: transparent;
+            color: var(--color1-90);
+        }
+        &:active {
+            border: none;
+        }
+    }
 }
 
 // option {

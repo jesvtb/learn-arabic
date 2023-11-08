@@ -8,10 +8,6 @@ import { Route } from 'wouter';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <Route
-            path="/"
-            component={AlphabetGR}
-        />
-        <Route
             path="/greek"
             component={AlphabetGR}
         />
