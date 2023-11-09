@@ -64,7 +64,6 @@ function MapLettersGR({ selectedFont, selectedCase }) {
                         <div
                             key={i}
                             className={`letter-group`}
-                            className={`letter-group`}
                         >
                             <Link to={`/greek/letter/${letter.id}`}>
                                 <h1
@@ -109,7 +108,6 @@ export function AlphabetAR() {
                 </div>
             </div>
             <MapLettersAR
-            <MapLettersAR
                 selectedFont={selectedFont}
                 selectedForm={selectedForm}
             />
@@ -118,13 +116,11 @@ export function AlphabetAR() {
 }
 
 function MapLettersAR({ selectedFont, selectedForm }) {
-function MapLettersAR({ selectedFont, selectedForm }) {
     const [letters, setLetters] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('./alphabet-AR.json');
                 const response = await axios.get('./alphabet-AR.json');
                 const lettersData = response.data;
                 if (Array.isArray(lettersData)) {
@@ -143,7 +139,6 @@ function MapLettersAR({ selectedFont, selectedForm }) {
     return (
         <>
             <div className="letters-wrapper lang-ar">
-            <div className="letters-wrapper lang-ar">
                 {letters.map((letter, i) => {
                     const formgroup = letter.formgroup;
                     const html = marked.parse(letter.medialinword);
@@ -160,7 +155,6 @@ function MapLettersAR({ selectedFont, selectedForm }) {
                             >
                                 <h1
                                     className={`letter-base lang-ar ${selectedFont} ${selectedForm}`}
-                                    className={`letter-base lang-ar ${selectedFont} ${selectedForm}`}
                                 >
                                     <span>ـ</span>
                                     {letter.alphabet}
@@ -172,13 +166,11 @@ function MapLettersAR({ selectedFont, selectedForm }) {
                                 <div className="form group">
                                     <h2 className="base-lang">initial</h2>
                                     <h2 className="lang-ar">
-                                    <h2 className="lang-ar">
                                         <span>ـ</span>
                                         {letter.alphabet}
                                         <span>ـ</span>
                                     </h2>
                                     <h2
-                                        className="form-in-word lang-ar"
                                         className="form-in-word lang-ar"
                                         dangerouslySetInnerHTML={{
                                             __html: html,
@@ -188,7 +180,6 @@ function MapLettersAR({ selectedFont, selectedForm }) {
                                 <div className="form group">
                                     <h2 className="base-lang">medial</h2>
                                     <h2 className="lang-ar">
-                                    <h2 className="lang-ar">
                                         <span>ـ</span>
                                         {letter.alphabet}
                                         <span>ـ</span>
@@ -196,7 +187,6 @@ function MapLettersAR({ selectedFont, selectedForm }) {
                                 </div>
                                 <div className="form group">
                                     <h2 className="base-lang">final</h2>
-                                    <h2 className="lang-ar">
                                     <h2 className="lang-ar">
                                         <span>ـ</span>
                                         {letter.alphabet}
@@ -233,8 +223,13 @@ function SelectFont({ onSelectFont }) {
                 >
                     font type
                 </option>
-                className="base-lang"
-            >
+                className="base-lang" >
+                <option
+                    selected
+                    disabled
+                >
+                    font type
+                </option>
                 <option
                     selected
                     disabled
@@ -269,8 +264,14 @@ function SelectCase({ onSelectCase }) {
                 >
                     display case
                 </option>
-                className="base-lang"
-            >
+                className="base-lang" >
+                <option
+                    selected
+                    disabled
+                >
+                    display case
+                </option>
+                className="base-lang" >
                 <option
                     selected
                     disabled
@@ -306,8 +307,14 @@ function SelectPositionAR({ onSelectPositionAR }) {
                 >
                     position
                 </option>
-                className="base-lang"
-            >
+                className="base-lang" >
+                <option
+                    selected
+                    disabled
+                >
+                    position
+                </option>
+                className="base-lang" >
                 <option
                     selected
                     disabled
