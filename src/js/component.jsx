@@ -30,6 +30,38 @@ export function AlphabetGR() {
     );
 }
 
+export function AlphabetAR() {
+    const [selectedFont, setSelectedFont] = useState('');
+    const [selectedForm, setSelectedForm] = useState('');
+    const lang = 'Arabic';
+    const handleFontChange = (selectedValue) => {
+        setSelectedFont(selectedValue);
+    };
+
+    const handleFormChange = (selectedValue) => {
+        setSelectedForm(selectedValue);
+    };
+
+    return (
+        <>
+            <div className="menu">
+                <Title lang={lang} />
+                <div className="selection">
+                    <SelectFont onSelectFont={handleFontChange} />
+                    <SelectPositionAR onSelectPositionAR={handleFormChange} />
+                </div>
+            </div>
+            <MapLettersAR
+                selectedFont={selectedFont}
+                selectedForm={selectedForm}
+            />
+        </>
+    );
+}
+
+// per letter mapping of languages
+// ==================================================
+
 function MapLettersGR({ selectedFont, selectedCase }) {
     const [letters, setLetters] = useState([]);
 
@@ -67,40 +99,22 @@ function MapLettersGR({ selectedFont, selectedCase }) {
                                     <span>{letter.alphabet}</span>
                                     <span>{letter.alphabet}</span>
                                 </h1>
+                                <div className="notation">
+                                    <p className="number">{letter.id}</p>
+                                </div>
                             </Link>
+                            <div className="tooltip">
+                                <div className="form group">
+                                    <h2 className="base-lang">latin name</h2>
+                                    <h2 className="base-lang">
+                                        {letter.latinName}
+                                    </h2>
+                                </div>
+                            </div>
                         </div>
                     );
                 })}
             </div>
-        </>
-    );
-}
-
-export function AlphabetAR() {
-    const [selectedFont, setSelectedFont] = useState('');
-    const [selectedForm, setSelectedForm] = useState('');
-    const lang = 'Arabic';
-    const handleFontChange = (selectedValue) => {
-        setSelectedFont(selectedValue);
-    };
-
-    const handleFormChange = (selectedValue) => {
-        setSelectedForm(selectedValue);
-    };
-
-    return (
-        <>
-            <div className="menu">
-                <Title lang={lang} />
-                <div className="selection">
-                    <SelectFont onSelectFont={handleFontChange} />
-                    <SelectPositionAR onSelectPositionAR={handleFormChange} />
-                </div>
-            </div>
-            <MapLettersAR
-                selectedFont={selectedFont}
-                selectedForm={selectedForm}
-            />
         </>
     );
 }
@@ -150,6 +164,9 @@ function MapLettersAR({ selectedFont, selectedForm }) {
                                     {letter.alphabet}
                                     <span>ـ</span>
                                 </h1>
+                                <div className="notation">
+                                    <p className="number">{letter.id}</p>
+                                </div>
                             </Link>
 
                             <div className="tooltip">
@@ -192,6 +209,9 @@ function MapLettersAR({ selectedFont, selectedForm }) {
     );
 }
 
+// selection components
+// ==================================================
+
 function SelectFont({ onSelectFont }) {
     const handleFontChange = (event) => {
         const selectedValue = event.target.value;
@@ -201,25 +221,11 @@ function SelectFont({ onSelectFont }) {
     return (
         <label>
             {/* <p className="base-lang">select font type</p> */}
-            {/* <p className="base-lang">select font type</p> */}
             <select
                 name="selectedFont"
                 onChange={handleFontChange}
                 className="base-lang"
             >
-                <option
-                    selected
-                    disabled
-                >
-                    font type
-                </option>
-                className="base-lang" >
-                <option
-                    selected
-                    disabled
-                >
-                    font type
-                </option>
                 <option
                     selected
                     disabled
@@ -242,26 +248,11 @@ function SelectCase({ onSelectCase }) {
     return (
         <label>
             {/* <p className="base-lang">select case type</p> */}
-            {/* <p className="base-lang">select case type</p> */}
             <select
                 name="selectedCase"
                 onChange={handleCaseChange}
                 className="base-lang"
             >
-                <option
-                    selected
-                    disabled
-                >
-                    display case
-                </option>
-                className="base-lang" >
-                <option
-                    selected
-                    disabled
-                >
-                    display case
-                </option>
-                className="base-lang" >
                 <option
                     selected
                     disabled
@@ -285,26 +276,11 @@ function SelectPositionAR({ onSelectPositionAR }) {
     return (
         <label>
             {/* <p className="base-lang">select form type</p> */}
-            {/* <p className="base-lang">select form type</p> */}
             <select
                 name="selectedForm"
                 onChange={handleFormChange}
                 className="base-lang"
             >
-                <option
-                    selected
-                    disabled
-                >
-                    position
-                </option>
-                className="base-lang" >
-                <option
-                    selected
-                    disabled
-                >
-                    position
-                </option>
-                className="base-lang" >
                 <option
                     selected
                     disabled
@@ -319,6 +295,9 @@ function SelectPositionAR({ onSelectPositionAR }) {
         </label>
     );
 }
+
+// title component
+// ==================================================
 
 function Title({ lang }) {
     return <div className="base-lang title">{lang} alphabet basics</div>;

@@ -212,7 +212,6 @@ body {
 }
 
 .letter-base {
-.letter-base {
     color: grey;
 }
 
@@ -317,6 +316,14 @@ body {
     }
 }
 
-// option {
-//     font-size: var(--step-2);
-// }
+.number {
+    font-family: var(--number);
+}
+
+.notation {
+    .number {
+        color: var(--color1-80);
+        font-size: var(--step-0);
+        text-align: center;
+    }
+}
