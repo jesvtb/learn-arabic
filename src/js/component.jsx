@@ -21,6 +21,11 @@ export function AlphabetGR() {
                     <SelectFont onSelectFont={handleFontChange} />
                     <SelectCase onSelectCase={handleCaseChange} />
                 </div>
+                <Title lang={lang} />
+                <div className="selection">
+                    <SelectFont onSelectFont={handleFontChange} />
+                    <SelectCase onSelectCase={handleCaseChange} />
+                </div>
             </div>
             <MapLettersGR
                 selectedFont={selectedFont}
@@ -59,6 +64,7 @@ function MapLettersGR({ selectedFont, selectedCase }) {
                         <div
                             key={i}
                             className={`letter-group`}
+                            className={`letter-group`}
                         >
                             <Link to={`/greek/letter/${letter.id}`}>
                                 <h1
@@ -96,6 +102,11 @@ export function AlphabetAR() {
                     <SelectFont onSelectFont={handleFontChange} />
                     <SelectPositionAR onSelectPositionAR={handleFormChange} />
                 </div>
+                <Title lang={lang} />
+                <div className="selection">
+                    <SelectFont onSelectFont={handleFontChange} />
+                    <SelectPositionAR onSelectPositionAR={handleFormChange} />
+                </div>
             </div>
             <MapLettersAR
             <MapLettersAR
@@ -128,9 +139,6 @@ function MapLettersAR({ selectedFont, selectedForm }) {
 
         fetchData();
     }, []);
-
-    // const [, navigate] = useLocation();
-    // const [, navigate] = useLocation();
 
     return (
         <>
@@ -213,9 +221,18 @@ function SelectFont({ onSelectFont }) {
     return (
         <label>
             {/* <p className="base-lang">select font type</p> */}
+            {/* <p className="base-lang">select font type</p> */}
             <select
                 name="selectedFont"
                 onChange={handleFontChange}
+                className="base-lang"
+            >
+                <option
+                    selected
+                    disabled
+                >
+                    font type
+                </option>
                 className="base-lang"
             >
                 <option
@@ -240,9 +257,18 @@ function SelectCase({ onSelectCase }) {
     return (
         <label>
             {/* <p className="base-lang">select case type</p> */}
+            {/* <p className="base-lang">select case type</p> */}
             <select
                 name="selectedCase"
                 onChange={handleCaseChange}
+                className="base-lang"
+            >
+                <option
+                    selected
+                    disabled
+                >
+                    display case
+                </option>
                 className="base-lang"
             >
                 <option
@@ -268,9 +294,18 @@ function SelectPositionAR({ onSelectPositionAR }) {
     return (
         <label>
             {/* <p className="base-lang">select form type</p> */}
+            {/* <p className="base-lang">select form type</p> */}
             <select
                 name="selectedForm"
                 onChange={handleFormChange}
+                className="base-lang"
+            >
+                <option
+                    selected
+                    disabled
+                >
+                    position
+                </option>
                 className="base-lang"
             >
                 <option
