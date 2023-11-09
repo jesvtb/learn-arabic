@@ -21,11 +21,6 @@ export function AlphabetGR() {
                     <SelectFont onSelectFont={handleFontChange} />
                     <SelectCase onSelectCase={handleCaseChange} />
                 </div>
-                <Title lang={lang} />
-                <div className="selection">
-                    <SelectFont onSelectFont={handleFontChange} />
-                    <SelectCase onSelectCase={handleCaseChange} />
-                </div>
             </div>
             <MapLettersGR
                 selectedFont={selectedFont}
@@ -96,11 +91,6 @@ export function AlphabetAR() {
     return (
         <>
             <div className="menu">
-                <Title lang={lang} />
-                <div className="selection">
-                    <SelectFont onSelectFont={handleFontChange} />
-                    <SelectPositionAR onSelectPositionAR={handleFormChange} />
-                </div>
                 <Title lang={lang} />
                 <div className="selection">
                     <SelectFont onSelectFont={handleFontChange} />
