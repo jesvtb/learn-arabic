@@ -40,7 +40,7 @@ body {
         sans-serif;
 }
 
-.lang-gr.letter-base {
+.lang-gr.single-letter__letter {
     span:first-of-type {
         text-transform: capitalize;
     }
@@ -56,6 +56,10 @@ body {
     }
 }
 
+.single-letter__letter.lang-jp {
+    font-size: var(--step-3);
+}
+
 .lang-ar.sans {
     font-family: var(--sans-AR) !important;
     // border: 2px solid red; // XXXX debug ⚠
@@ -69,42 +73,42 @@ body {
     font-family: var(--sans-EN);
 }
 
-.letters-wrapper {
+.letters {
     display: flex;
     flex-wrap: wrap;
     column-gap: var(--space-xl);
     padding: 0 var(--space-s);
 
-    .letter-group {
+    .single-letter {
         display: inline-block;
     }
 }
 
-.letters-wrapper .lang-ar {
+.letters .lang-ar {
     flex-direction: row-reverse;
 }
 
-.letters-wrapper .lang-ar {
+.letters .lang-ar {
     flex-direction: row-reverse;
 }
 
-.letter-base {
+.single-letter__letter {
     @include i.landscape {
         font-size: var(--step-5);
     }
 }
 
-.letter-base.lang-ar {
+.letter.lang-ar {
     &::after {
         content: ' َ';
     }
 }
 
-// letter base action after hover
+// single-letter__letterbase action after hover
 // ==================================================
 
-.letter-group {
-    .letter-base {
+.single-letter {
+    .single-letter__letter {
         &::after {
             content: '';
             position: absolute;
@@ -122,7 +126,7 @@ body {
         }
     }
     &:hover {
-        .letter-base {
+        .single-letter__letter {
             cursor: pointer;
             cursor: pointer;
             color: var(--color1-90);
@@ -133,19 +137,19 @@ body {
     }
 }
 
-// toooltip action after letter hover
+// toooltip action after single-letter__letterhover
 // ==================================================
 
-.letter-group {
+.single-letter {
     position: relative;
-    .tooltip {
+    .single-letter__tooltip-grp {
         display: none;
     }
     a {
         text-decoration: none;
     }
     &:hover {
-        .tooltip {
+        .single-letter__tooltip-grp {
             display: none;
             width: 20vw;
             display: flex;
@@ -174,31 +178,20 @@ body {
     }
 }
 
-.form.group {
+.letter-form {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
-    .base-lang {
+    &__base-lang {
         color: var(--color2-80);
         font-size: var(--step-0);
+        font-family: var(--sans-EN);
     }
-    .lang-ar {
+    &__set {
         color: var(--color2-40);
         font-size: var(--step-4);
+        font-weight: 200;
         line-height: 0.3em;
-    }
-    &:nth-of-type(1) {
-        span:nth-of-type(1) {
-            color: var(--color3-90);
-            display: none;
-        }
-    }
-    &:nth-of-type(3) {
-        span:nth-of-type(2) {
-            color: var(--color3-90);
-            display: none;
-        }
     }
 }
 
@@ -211,7 +204,16 @@ body {
     }
 }
 
-.letter-base {
+@for $i from 1 through 11 {
+    .phonetics:nth-of-type(#{$i}) {
+        .single-letter__letter {
+            $hue: $i * 60;
+            color: hsl($hue, 50%, 50%) !important;
+        }
+    }
+}
+
+.single-letter__letter {
     color: grey;
 }
 
@@ -247,18 +249,21 @@ body {
     // margin-top: var(--space-l);
 }
 
-.menu {
+.lang-header {
     display: flex;
-    .selection {
+    .selection-area {
         display: flex;
         flex-direction: column;
     }
     @include i.landscape {
+        position: sticky;
+        top: 0;
+        // left: 0;
         flex-direction: column;
         padding-right: var(--space-l);
         gap: var(--space-s);
         border-right: 1px solid var(--color1-40);
-        .selection {
+        .selection-area {
             gap: var(--space-xs);
         }
     }
@@ -270,7 +275,7 @@ body {
         padding-bottom: var(--space-l);
         gap: var(--space-s);
         border-bottom: 1px solid var(--color1-40);
-        .selection {
+        .selection-area {
             gap: var(--space-xs);
         }
     }
@@ -316,14 +321,63 @@ body {
     }
 }
 
-.number {
-    font-family: var(--number);
+.single-letter__order-num {
+    font-family: var(--single-letter__order-num);
 }
 
-.notation {
-    .number {
+.single-letter__notation-grp {
+    .single-letter__order-num {
         color: var(--color1-80);
         font-size: var(--step-0);
         text-align: center;
+    }
+}
+
+.home-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    border-right: 1px solid var(--color1-40);
+    padding: var(--space-s);
+}
+
+.home-nav__lang {
+    text-decoration: none;
+    color: var(--color1-80);
+    font-size: var(--step-2);
+    font-family: var(--sans-EN);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.single-letter__letter.lang-jp {
+    &.hiragana {
+        span:nth-of-type(2) {
+            display: none;
+        }
+    }
+    &.katakana {
+        span:nth-of-type(1) {
+            display: none;
+        }
+    }
+}
+
+// .phonetics {
+//     display: flex;
+//     flex-direction: row;
+// }
+.letters.lang-jp {
+    display: flex;
+    flex-direction: row;
+    .phonetics {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        // gap: var(--space-3xl);
+        h2 {
+            align-self: center;
+            color: var(--color1-80);
+        }
     }
 }

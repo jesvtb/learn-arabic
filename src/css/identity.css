@@ -7,7 +7,8 @@
   --serif: "Noto Naskh Arabic", serif;
   --sans: "Roboto Condensed", sans-serif;
   --sans-EN: "Mukta", sans-serif;
-  --number: "Gill Sans", "Gill Sans MT", calibri, "Trebuchet MS", sans-serif;
+  --single-letter__order-num: "Gill Sans", "Gill Sans MT", calibri,
+      "Trebuchet MS", sans-serif;
 }
 
 /* @link https://utopia.fyi/type/calculator?c=360,14,1.125,1366,16,1.414,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */

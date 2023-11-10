@@ -249,8 +249,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type=single-letter__order-num]::-webkit-inner-spin-button,
+[type=single-letter__order-num]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -318,7 +318,8 @@ template {
   --serif: "Noto Naskh Arabic", serif;
   --sans: "Roboto Condensed", sans-serif;
   --sans-EN: "Mukta", sans-serif;
-  --number: "Gill Sans", "Gill Sans MT", calibri, "Trebuchet MS", sans-serif;
+  --single-letter__order-num: "Gill Sans", "Gill Sans MT", calibri,
+      "Trebuchet MS", sans-serif;
 }
 
 /* @link https://utopia.fyi/type/calculator?c=360,14,1.125,1366,16,1.414,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */
@@ -544,14 +545,18 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.lang-gr.letter-base span:first-of-type {
+.lang-gr.single-letter__letter span:first-of-type {
   text-transform: capitalize;
 }
-.lang-gr.letter-base.lowercase span:first-of-type {
+.lang-gr.single-letter__letter.lowercase span:first-of-type {
   display: none;
 }
-.lang-gr.letter-base.uppercase span:last-of-type {
+.lang-gr.single-letter__letter.uppercase span:last-of-type {
   display: none;
+}
+
+.single-letter__letter.lang-jp {
+  font-size: var(--step-3);
 }
 
 .lang-ar.sans {
@@ -566,35 +571,35 @@ body {
   font-family: var(--sans-EN);
 }
 
-.letters-wrapper {
+.letters {
   display: flex;
   flex-wrap: wrap;
   column-gap: var(--space-xl);
   padding: 0 var(--space-s);
 }
-.letters-wrapper .letter-group {
+.letters .single-letter {
   display: inline-block;
 }
 
-.letters-wrapper .lang-ar {
+.letters .lang-ar {
   flex-direction: row-reverse;
 }
 
-.letters-wrapper .lang-ar {
+.letters .lang-ar {
   flex-direction: row-reverse;
 }
 
 @media only screen and (orientation: landscape) {
-  .letter-base {
+  .single-letter__letter {
     font-size: var(--step-5);
   }
 }
 
-.letter-base.lang-ar::after {
+.letter.lang-ar::after {
   content: " َ";
 }
 
-.letter-group .letter-base::after {
+.single-letter .single-letter__letter::after {
   content: "";
   position: absolute;
   bottom: 20%;
@@ -618,28 +623,28 @@ body {
   -o-transform: scaleX(0);
   transform: scaleX(0);
 }
-.letter-group:hover .letter-base {
+.single-letter:hover .single-letter__letter {
   cursor: pointer;
   cursor: pointer;
   color: var(--color1-90);
 }
-.letter-group:hover .letter-base::after {
+.single-letter:hover .single-letter__letter::after {
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
   -o-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-.letter-group {
+.single-letter {
   position: relative;
 }
-.letter-group .tooltip {
+.single-letter .single-letter__tooltip-grp {
   display: none;
 }
-.letter-group a {
+.single-letter a {
   text-decoration: none;
 }
-.letter-group:hover .tooltip {
+.single-letter:hover .single-letter__tooltip-grp {
   display: none;
   width: 20vw;
   display: flex;
@@ -666,27 +671,21 @@ body {
   font-weight: 300;
 }
 
-.form.group {
+.letter-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.form.group .base-lang {
+.letter-form__base-lang {
   color: var(--color2-80);
   font-size: var(--step-0);
+  font-family: var(--sans-EN);
 }
-.form.group .lang-ar {
+.letter-form__set {
   color: var(--color2-40);
   font-size: var(--step-4);
+  font-weight: 200;
   line-height: 0.3em;
-}
-.form.group:nth-of-type(1) span:nth-of-type(1) {
-  color: var(--color3-90);
-  display: none;
-}
-.form.group:nth-of-type(3) span:nth-of-type(2) {
-  color: var(--color3-90);
-  display: none;
 }
 
 .fg-1 h1 {
@@ -725,7 +724,51 @@ body {
   color: hsl(0, 50%, 50%);
 }
 
-.letter-base {
+.phonetics:nth-of-type(1) .single-letter__letter {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(2) .single-letter__letter {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(3) .single-letter__letter {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(4) .single-letter__letter {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(5) .single-letter__letter {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(6) .single-letter__letter {
+  color: hsl(0, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(7) .single-letter__letter {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(8) .single-letter__letter {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(9) .single-letter__letter {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(10) .single-letter__letter {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(11) .single-letter__letter {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.single-letter__letter {
   color: grey;
 }
 
@@ -747,26 +790,28 @@ body {
   text-transform: capitalize;
 }
 
-.menu {
+.lang-header {
   display: flex;
 }
-.menu .selection {
+.lang-header .selection-area {
   display: flex;
   flex-direction: column;
 }
 @media only screen and (orientation: landscape) {
-  .menu {
+  .lang-header {
+    position: sticky;
+    top: 0;
     flex-direction: column;
     padding-right: var(--space-l);
     gap: var(--space-s);
     border-right: 1px solid var(--color1-40);
   }
-  .menu .selection {
+  .lang-header .selection-area {
     gap: var(--space-xs);
   }
 }
 @media only screen and (orientation: portrait) {
-  .menu {
+  .lang-header {
     position: sticky;
     top: 0;
     flex-direction: row;
@@ -775,11 +820,11 @@ body {
     gap: var(--space-s);
     border-bottom: 1px solid var(--color1-40);
   }
-  .menu .selection {
+  .lang-header .selection-area {
     gap: var(--space-xs);
   }
 }
-.menu label {
+.lang-header label {
   position: relative;
   display: flex;
   width: 11em;
@@ -789,7 +834,7 @@ body {
   overflow: hidden;
   border-radius: 0.25em;
 }
-.menu label::after {
+.lang-header label::after {
   content: "▼";
   position: absolute;
   top: 0;
@@ -801,7 +846,7 @@ body {
   pointer-events: none;
   transition: 0.25s all ease;
 }
-.menu select {
+.lang-header select {
   width: 10em;
   border: none;
   outline: 0;
@@ -811,22 +856,60 @@ body {
   cursor: pointer;
   background: var(--color1-10);
 }
-.menu select:hover {
+.lang-header select:hover {
   background-color: transparent;
   color: var(--color1-90);
 }
-.menu select:active {
+.lang-header select:active {
   border: none;
 }
 
-.number {
-  font-family: var(--number);
+.single-letter__order-num {
+  font-family: var(--single-letter__order-num);
 }
 
-.notation .number {
+.single-letter__notation-grp .single-letter__order-num {
   color: var(--color1-80);
   font-size: var(--step-0);
   text-align: center;
+}
+
+.home-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  border-right: 1px solid var(--color1-40);
+  padding: var(--space-s);
+}
+
+.home-nav__lang {
+  text-decoration: none;
+  color: var(--color1-80);
+  font-size: var(--step-2);
+  font-family: var(--sans-EN);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.single-letter__letter.lang-jp.hiragana span:nth-of-type(2) {
+  display: none;
+}
+.single-letter__letter.lang-jp.katakana span:nth-of-type(1) {
+  display: none;
+}
+
+.letters.lang-jp {
+  display: flex;
+  flex-direction: row;
+}
+.letters.lang-jp .phonetics {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.letters.lang-jp .phonetics h2 {
+  align-self: center;
+  color: var(--color1-80);
 }
 
 /*# sourceMappingURL=index.css.map */

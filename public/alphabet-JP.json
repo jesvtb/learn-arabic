@@ -1,0 +1,324 @@
+[
+    {
+        "id": 1,
+        "hiragana": "あ",
+        "katakana": "ア",
+        "phoneticgroup": "pg-0",
+        "romaji": "a"
+    },
+    {
+        "id": 2,
+        "hiragana": "い",
+        "katakana": "イ",
+        "phoneticgroup": "pg-0",
+        "romaji": "i"
+    },
+    {
+        "id": 3,
+        "hiragana": "う",
+        "katakana": "ウ",
+        "phoneticgroup": "pg-0",
+        "romaji": "u"
+    },
+    {
+        "id": 4,
+        "hiragana": "え",
+        "katakana": "エ",
+        "phoneticgroup": "pg-0",
+        "romaji": "e"
+    },
+    {
+        "id": 5,
+        "hiragana": "お",
+        "katakana": "オ",
+        "phoneticgroup": "pg-0",
+        "romaji": "o"
+    },
+    {
+        "id": 6,
+        "hiragana": "か",
+        "katakana": "カ",
+        "phoneticgroup": "pg-k",
+        "romaji": "ka"
+    },
+    {
+        "id": 7,
+        "hiragana": "き",
+        "katakana": "キ",
+        "phoneticgroup": "pg-k",
+        "romaji": "ki"
+    },
+    {
+        "id": 8,
+        "hiragana": "く",
+        "katakana": "ク",
+        "phoneticgroup": "pg-k",
+        "romaji": "ku"
+    },
+    {
+        "id": 9,
+        "hiragana": "け",
+        "katakana": "ケ",
+        "phoneticgroup": "pg-k",
+        "romaji": "ke"
+    },
+    {
+        "id": 10,
+        "hiragana": "こ",
+        "katakana": "コ",
+        "phoneticgroup": "pg-k",
+        "romaji": "ko"
+    },
+    {
+        "id": 11,
+        "hiragana": "さ",
+        "katakana": "サ",
+        "phoneticgroup": "pg-s",
+        "romaji": "sa"
+    },
+    {
+        "id": 12,
+        "hiragana": "し",
+        "katakana": "シ",
+        "phoneticgroup": "pg-s",
+        "romaji": "shi"
+    },
+    {
+        "id": 13,
+        "hiragana": "す",
+        "katakana": "ス",
+        "phoneticgroup": "pg-s",
+        "romaji": "su"
+    },
+    {
+        "id": 14,
+        "hiragana": "せ",
+        "katakana": "セ",
+        "phoneticgroup": "pg-s",
+        "romaji": "se"
+    },
+    {
+        "id": 15,
+        "hiragana": "そ",
+        "katakana": "ソ",
+        "phoneticgroup": "pg-s",
+        "romaji": "so"
+    },
+    {
+        "id": 16,
+        "hiragana": "た",
+        "katakana": "タ",
+        "phoneticgroup": "pg-t",
+        "romaji": "ta"
+    },
+    {
+        "id": 17,
+        "hiragana": "ち",
+        "katakana": "チ",
+        "phoneticgroup": "pg-t",
+        "romaji": "chi"
+    },
+    {
+        "id": 18,
+        "hiragana": "つ",
+        "katakana": "ツ",
+        "phoneticgroup": "pg-t",
+        "romaji": "tsu"
+    },
+    {
+        "id": 19,
+        "hiragana": "て",
+        "katakana": "テ",
+        "phoneticgroup": "pg-t",
+        "romaji": "te"
+    },
+    {
+        "id": 20,
+        "hiragana": "と",
+        "katakana": "ト",
+        "phoneticgroup": "pg-t",
+        "romaji": "to"
+    },
+    {
+        "id": 21,
+        "hiragana": "な",
+        "katakana": "ナ",
+        "phoneticgroup": "pg-n",
+        "romaji": "na"
+    },
+    {
+        "id": 22,
+        "hiragana": "に",
+        "katakana": "ニ",
+        "phoneticgroup": "pg-n",
+        "romaji": "ni"
+    },
+    {
+        "id": 23,
+        "hiragana": "ぬ",
+        "katakana": "ヌ",
+        "phoneticgroup": "pg-n",
+        "romaji": "nu"
+    },
+    {
+        "id": 24,
+        "hiragana": "ね",
+        "katakana": "ネ",
+        "phoneticgroup": "pg-n",
+        "romaji": "ne"
+    },
+    {
+        "id": 25,
+        "hiragana": "の",
+        "katakana": "ノ",
+        "phoneticgroup": "pg-n",
+        "romaji": "no"
+    },
+    {
+        "id": 26,
+        "hiragana": "は",
+        "katakana": "ハ",
+        "phoneticgroup": "pg-h",
+        "romaji": "ha"
+    },
+    {
+        "id": 27,
+        "hiragana": "ひ",
+        "katakana": "ヒ",
+        "phoneticgroup": "pg-h",
+        "romaji": "hi"
+    },
+    {
+        "id": 28,
+        "hiragana": "ふ",
+        "katakana": "フ",
+        "phoneticgroup": "pg-h",
+        "romaji": "fu"
+    },
+    {
+        "id": 29,
+        "hiragana": "へ",
+        "katakana": "ヘ",
+        "phoneticgroup": "pg-h",
+        "romaji": "he"
+    },
+    {
+        "id": 30,
+        "hiragana": "ほ",
+        "katakana": "ホ",
+        "phoneticgroup": "pg-h",
+        "romaji": "ho"
+    },
+    {
+        "id": 31,
+        "hiragana": "ま",
+        "katakana": "マ",
+        "phoneticgroup": "pg-m",
+        "romaji": "ma"
+    },
+    {
+        "id": 32,
+        "hiragana": "み",
+        "katakana": "ミ",
+        "phoneticgroup": "pg-m",
+        "romaji": "mi"
+    },
+    {
+        "id": 33,
+        "hiragana": "む",
+        "katakana": "ム",
+        "phoneticgroup": "pg-m",
+        "romaji": "mu"
+    },
+    {
+        "id": 34,
+        "hiragana": "め",
+        "katakana": "メ",
+        "phoneticgroup": "pg-m",
+        "romaji": "me"
+    },
+    {
+        "id": 35,
+        "hiragana": "も",
+        "katakana": "モ",
+        "phoneticgroup": "pg-m",
+        "romaji": "mo"
+    },
+    {
+        "id": 36,
+        "hiragana": "や",
+        "katakana": "ヤ",
+        "phoneticgroup": "pg-y",
+        "romaji": "ya"
+    },
+    {
+        "id": 37,
+        "hiragana": "ゆ",
+        "katakana": "ユ",
+        "phoneticgroup": "pg-y",
+        "romaji": "yu"
+    },
+    {
+        "id": 38,
+        "hiragana": "よ",
+        "katakana": "ヨ",
+        "phoneticgroup": "pg-y",
+        "romaji": "yo"
+    },
+    {
+        "id": 39,
+        "hiragana": "ら",
+        "katakana": "ラ",
+        "phoneticgroup": "pg-r",
+        "romaji": "ra"
+    },
+    {
+        "id": 40,
+        "hiragana": "り",
+        "katakana": "リ",
+        "phoneticgroup": "pg-r",
+        "romaji": "ri"
+    },
+    {
+        "id": 41,
+        "hiragana": "る",
+        "katakana": "ル",
+        "phoneticgroup": "pg-r",
+        "romaji": "ru"
+    },
+    {
+        "id": 42,
+        "hiragana": "れ",
+        "katakana": "レ",
+        "phoneticgroup": "pg-r",
+        "romaji": "re"
+    },
+    {
+        "id": 43,
+        "hiragana": "ろ",
+        "katakana": "ロ",
+        "phoneticgroup": "pg-r",
+        "romaji": "ro"
+    },
+    {
+        "id": 44,
+        "hiragana": "わ",
+        "katakana": "ワ",
+        "phoneticgroup": "pg-w",
+        "romaji": "wa"
+    },
+    {
+        "id": 45,
+        "hiragana": "を",
+        "katakana": "ヲ",
+        "phoneticgroup": "pg-w",
+        "romaji": "wo"
+    },
+    {
+        "id": 46,
+        "hiragana": "ん",
+        "katakana": "ン",
+        "phoneticgroup": "pg-n0",
+        "romaji": "n"
+    }
+]
