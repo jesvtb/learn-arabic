@@ -589,3 +589,6 @@ body {
   align-self: center;
   color: var(--color1-80);
 }
+.letters.lang-jp .pg-y .single-letter:nth-of-type(2) .single-letter__letter {
+  text-align: center;
+}

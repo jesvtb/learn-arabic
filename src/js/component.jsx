@@ -216,9 +216,9 @@ function MapLettersJP({ selectedFont, selectedSyllabary }) {
                     ([phoneticGroup, letters]) => (
                         <div
                             key={phoneticGroup}
-                            className="phonetics"
+                            className={`phonetics ${phoneticGroup}`}
                         >
-                            <h2 className="base-lang">{phoneticGroup}</h2>
+                            {/* <h2 className="base-lang">{phoneticGroup}</h2> */}
                             {letters.map((letter, i) => (
                                 <div
                                     key={i}
@@ -226,7 +226,7 @@ function MapLettersJP({ selectedFont, selectedSyllabary }) {
                                 >
                                     <Link to={`/japanese/letter/${letter.id}`}>
                                         <h1
-                                            className={`single-letter__letter lang-jp ${phoneticGroup} ${selectedFont} ${selectedSyllabary}`}
+                                            className={`single-letter__letter lang-jp ${selectedFont} ${selectedSyllabary}`}
                                         >
                                             <span>{letter.hiragana}</span>
                                             <span>{letter.katakana}</span>

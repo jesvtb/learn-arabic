@@ -380,4 +380,15 @@ body {
             color: var(--color1-80);
         }
     }
+    .pg-y {
+        .single-letter:nth-of-type(2) {
+            // font-size: var(--step-5);
+            // flex-grow: 3;
+            .single-letter__letter {
+                text-align: center;
+            }
+            // justify-content: center;
+            // border: 2px solid red; // XXXX debug ⚠
+        }
+    }
 }
