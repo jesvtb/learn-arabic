@@ -824,43 +824,22 @@ body {
     gap: var(--space-xs);
   }
 }
-.lang-header label {
-  position: relative;
-  display: flex;
-  width: 11em;
-  height: var(--space-xl);
-  line-height: 3;
-  background: var(--color1-10);
-  overflow: hidden;
-  border-radius: 0.25em;
-}
-.lang-header label::after {
-  content: "▼";
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 1em;
-  background: var(--color1-10);
-  color: var(--color1-80);
-  cursor: pointer;
-  pointer-events: none;
-  transition: 0.25s all ease;
-}
-.lang-header select {
+
+.dropdown {
   width: 10em;
-  border: none;
-  outline: 0;
+  font-family: var(--sans-EN);
   text-transform: capitalize;
+  outline: none;
   color: var(--color1-80);
-  padding: var(--space-2xs) var(--space-s);
+  padding: var(--space-3xs) var(--space-2xs);
   cursor: pointer;
   background: var(--color1-10);
 }
-.lang-header select:hover {
-  background-color: transparent;
-  color: var(--color1-90);
+.dropdown:hover {
+  background-color: var(--color1-90);
+  color: var(--color1-10);
 }
-.lang-header select:active {
+.dropdown:active {
   border: none;
 }
 

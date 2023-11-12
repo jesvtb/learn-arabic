@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { marked } from 'marked';
-import { Link, useLocation, Route, useParams } from 'wouter';
+import { Link, useParams } from 'wouter';
 
 export function HomeNav() {
     return (
@@ -94,7 +94,7 @@ export function AlphabetAR() {
         setSelectedFont(selectedValue);
     };
 
-    const handleFormChange = (selectedValue) => {
+    const handlePositionChange = (selectedValue) => {
         setSelectedForm(selectedValue);
     };
 
@@ -104,7 +104,9 @@ export function AlphabetAR() {
                 <Title lang={lang} />
                 <div className="selection-area">
                     <SelectFont onSelectFont={handleFontChange} />
-                    <SelectPositionAR onSelectPositionAR={handleFormChange} />
+                    <SelectPositionAR
+                        onSelectPositionAR={handlePositionChange}
+                    />
                 </div>
             </div>
             <MapLettersAR
@@ -340,30 +342,47 @@ function MapLettersAR({ selectedFont, selectedForm }) {
 // selection-area components
 // ==================================================
 
+function MapSelections({ options, defaultOption }) {
+    return (
+        <>
+            <option
+                selected
+                disabled
+            >
+                {defaultOption}
+            </option>
+            {options.map((option, i) => (
+                <option
+                    key={i}
+                    value={option}
+                    className="dropdown__option"
+                >
+                    {option}
+                </option>
+            ))}
+        </>
+    );
+}
+
 function SelectFont({ onSelectFont }) {
     const handleFontChange = (event) => {
         const selectedValue = event.target.value;
         onSelectFont(selectedValue);
     };
 
+    const options = ['sans', 'serif'];
+
     return (
-        <label>
-            {/* <p className="base-lang">select font type</p> */}
-            <select
-                name="selectedFont"
-                onChange={handleFontChange}
-                className="base-lang"
-            >
-                <option
-                    selected
-                    disabled
-                >
-                    font type
-                </option>
-                <option value="serif">serif</option>
-                <option value="sans">sans</option>
-            </select>
-        </label>
+        <select
+            name="selectedFont"
+            onChange={handleFontChange}
+            className="dropdown"
+        >
+            <MapSelections
+                defaultOption="font type"
+                options={options}
+            />
+        </select>
     );
 }
 
@@ -375,63 +394,37 @@ function SelectCase({ onSelectCase }) {
     const options = ['lowercase', 'uppercase', 'together'];
 
     return (
-        <label>
-            {/* <p className="base-lang">select case type</p> */}
-            <select
-                name="selectedCase"
-                onChange={handleCaseChange}
-                className="base-lang"
-            >
-                <option
-                    selected
-                    disabled
-                >
-                    display case
-                </option>
-                {options.map((option, i) => (
-                    <option
-                        key={i}
-                        value={option}
-                    >
-                        {option}
-                    </option>
-                ))}
-            </select>
-        </label>
+        <select
+            name="selectedCase"
+            onChange={handleCaseChange}
+            className="dropdown"
+        >
+            <MapSelections
+                defaultOption="case type"
+                options={options}
+            />
+        </select>
     );
 }
 
 function SelectPositionAR({ onSelectPositionAR }) {
-    const handleFormChange = (event) => {
+    const handlePositionChange = (event) => {
         const selectedValue = event.target.value;
         onSelectPositionAR(selectedValue);
     };
     const options = ['alone', 'initial', 'medial', 'final'];
 
     return (
-        <label>
-            {/* <p className="base-lang">select form type</p> */}
-            <select
-                name="selectedForm"
-                onChange={handleFormChange}
-                className="base-lang"
-            >
-                <option
-                    selected
-                    disabled
-                >
-                    position
-                </option>
-                {options.map((option, i) => (
-                    <option
-                        key={i}
-                        value={option}
-                    >
-                        {option}
-                    </option>
-                ))}
-            </select>
-        </label>
+        <select
+            name="selectedForm"
+            onChange={handlePositionChange}
+            className="dropdown"
+        >
+            <MapSelections
+                defaultOption="form type"
+                options={options}
+            />
+        </select>
     );
 }
 
@@ -443,29 +436,16 @@ function SelectSyllabary({ onSelectSyllabary }) {
     const options = ['hiragana', 'katakana', 'together'];
 
     return (
-        <label>
-            {/* <p className="base-lang">select syllabary</p> */}
-            <select
-                name="selectedSyllabary"
-                onChange={handleSyllabaryChange}
-                className="base-lang"
-            >
-                <option
-                    selected
-                    disabled
-                >
-                    syllabary
-                </option>
-                {options.map((option, i) => (
-                    <option
-                        key={i}
-                        value={option}
-                    >
-                        {option}
-                    </option>
-                ))}
-            </select>
-        </label>
+        <select
+            name="selectedSyllabary"
+            onChange={handleSyllabaryChange}
+            className="dropdown"
+        >
+            <MapSelections
+                defaultOption="syllabary group"
+                options={options}
+            />
+        </select>
     );
 }
 
