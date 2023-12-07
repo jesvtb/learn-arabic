@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300&family=Noto+Naskh+Arabic&family=Noto+Sans+Arabic:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fira+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -249,8 +250,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type=single-letter__order-num]::-webkit-inner-spin-button,
-[type=single-letter__order-num]::-webkit-outer-spin-button {
+[type=single-letter__letterOrder]::-webkit-inner-spin-button,
+[type=single-letter__letterOrder]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -312,14 +313,17 @@ template {
 }
 
 :root {
+  --sans-JP: "Noto Sans JP", sans-serif;
+  --serif-JP: "Noto Serif JP", serif;
+  --serif-GR: "EB Garamond", serif;
+  --sans-GR: "Fira Sans", sans-serif;
   --serif-AR: "Noto Naskh Arabic", serif;
   --sans-AR: "Noto Sans Arabic", sans-serif;
   --display: "Playfair Display", serif;
   --serif: "Noto Naskh Arabic", serif;
   --sans: "Roboto Condensed", sans-serif;
   --sans-EN: "Mukta", sans-serif;
-  --single-letter__order-num: "Gill Sans", "Gill Sans MT", calibri,
-      "Trebuchet MS", sans-serif;
+  --number: "Gill Sans", "Gill Sans MT", calibri, "Trebuchet MS", sans-serif;
 }
 
 /* @link https://utopia.fyi/type/calculator?c=360,14,1.125,1366,16,1.414,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */
@@ -503,21 +507,131 @@ template {
 body {
   background: var(--color-001);
 }
-@media only screen and (orientation: landscape) {
-  body {
-    padding: var(--space-l) var(--space-2xl);
-  }
+
+body:has(.selectPanel) .homeNav {
+  display: none;
+}
+
+.homeNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-l);
+  width: 100vw;
+  height: 100vh;
+}
+.homeNav__link {
+  text-decoration: none;
+  color: var(--color1-40);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeNav__link:hover {
+  color: var(--color1-90);
+}
+.homeNav__localName {
+  font-size: var(--step-4);
+}
+.homeNav__localName--ar {
+  font-family: var(--serif-AR);
+  font-weight: 400;
+  direction: rtl;
+}
+.homeNav__localName--gr {
+  font-family: var(--serif-GR);
+  font-weight: 300;
+}
+.homeNav__localName--jp {
+  font-family: var(--serif-JP);
+  font-weight: 400;
+  scale: 0.9;
+}
+.homeNav__englishName {
+  font-size: var(--step-2);
+  font-family: var(--sans-EN);
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.navToggle {
+  border: none;
+  width: var(--space-2xl);
+  position: fixed;
+  cursor: pointer;
+  z-index: 1;
+  left: var(--space-s);
+  bottom: var(--space-l);
 }
 @media only screen and (orientation: portrait) {
-  body {
-    padding: var(--space-m) var(--space-m);
+  .navToggle {
+    right: var(--space-s);
   }
+}
+.navToggle__icon {
+  width: 100%;
+  height: 100%;
+}
+.navToggle__icon path {
+  stroke: var(--color1-90);
+  stroke-width: 6px;
+  stroke-linecap: round;
+}
+.navToggle__link {
+  color: var(--color1-90);
+  font-family: var(--sans-EN);
+  font-size: var(--step-2);
+}
+.navToggle__icon--open path:nth-of-type(1), .navToggle__icon--open path:nth-of-type(3) {
+  transform-origin: 60% 60%;
+  transition-property: transform;
+}
+.navToggle__icon--open path:nth-of-type(1) {
+  -webkit-transform: rotate(45deg) translateY(30px) translateX(-10px);
+  -moz-transform: rotate(45deg) translateY(30px) translateX(-10px);
+  -o-transform: rotate(45deg) translateY(30px) translateX(-10px);
+  transform: rotate(45deg) translateY(30px) translateX(-10px);
+}
+.navToggle__icon--open path:nth-of-type(3) {
+  -webkit-transform: rotate(-45deg) translateY(-30px) translateX(10px);
+  -moz-transform: rotate(-45deg) translateY(-30px) translateX(10px);
+  -o-transform: rotate(-45deg) translateY(-30px) translateX(10px);
+  transform: rotate(-45deg) translateY(-30px) translateX(10px);
+}
+.navToggle__icon--open path:nth-of-type(2) {
+  opacity: 0%;
+  transition-property: transform, opacity;
+  -webkit-transform: translateX(100px);
+  -moz-transform: translateX(100px);
+  -o-transform: translateX(100px);
+  transform: translateX(100px);
+}
+
+.toggleNav {
+  padding: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  background: var(--color1-80);
+  position: fixed;
+}
+.toggleNav__link {
+  text-decoration: none;
+  color: var(--color1-10);
+  font-size: var(--step-2);
+  font-family: var(--sans-EN);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.toggleNav--open {
+  z-index: 2;
 }
 
 @media only screen and (orientation: landscape) {
   #root {
     display: flex;
-    gap: var(--space-xl);
   }
 }
 @media only screen and (orientation: portrait) {
@@ -537,61 +651,80 @@ body {
   font-weight: 200;
 }
 
-.lang-gr.serif {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.lang-gr.sans {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-.lang-gr.single-letter__letter span:first-of-type {
+.lang-gr.letterSingle__letter span:first-of-type {
   text-transform: capitalize;
 }
-.lang-gr.single-letter__letter.lowercase span:first-of-type {
+.lang-gr.letterSingle__letter.lowercase span:first-of-type {
   display: none;
 }
-.lang-gr.single-letter__letter.uppercase span:last-of-type {
+.lang-gr.letterSingle__letter.uppercase span:last-of-type {
   display: none;
 }
 
-.single-letter__letter.lang-jp {
+.lang-jp.letterSingle__letter {
   font-size: var(--step-3);
 }
 
-.lang-ar.sans {
+.lang-ar--sans {
   font-family: var(--sans-AR) !important;
+  font-weight: 400;
+}
+.lang-ar--serif {
+  font-family: var(--serif-AR) !important;
 }
 
-.lang-ar.serif {
-  font-family: var(--serif-AR) !important;
+.lang-gr--serif {
+  font-family: var(--serif-GR);
+  font-weight: 400;
+}
+.lang-gr--sans {
+  font-family: var(--sans-GR);
+  font-weight: 300;
+}
+
+.lang-jp--sans {
+  font-family: var(--sans-JP);
+  font-weight: 400;
+}
+.lang-jp--serif {
+  font-family: var(--serif-JP);
+  font-weight: 500;
 }
 
 .base-lang {
   font-family: var(--sans-EN);
 }
 
-.letters {
+.lettersPanel {
   display: flex;
   flex-wrap: wrap;
   column-gap: var(--space-xl);
-  padding: 0 var(--space-s);
 }
-.letters .single-letter {
+@media only screen and (orientation: landscape) {
+  .lettersPanel {
+    padding: 0 var(--space-3xl);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .lettersPanel {
+    padding: 0 var(--space-xs);
+  }
+}
+.lettersPanel .letterSingle {
   display: inline-block;
 }
 
-.letters .lang-ar {
+.lettersPanel .lang-ar {
   flex-direction: row-reverse;
 }
 
-.letters .lang-ar {
+.lettersPanel .lang-ar {
   flex-direction: row-reverse;
 }
 
 @media only screen and (orientation: landscape) {
-  .single-letter__letter {
-    font-size: var(--step-5);
+  .letterSingle__letter {
+    font-size: var(--step-4);
   }
 }
 
@@ -599,7 +732,7 @@ body {
   content: " َ";
 }
 
-.single-letter .single-letter__letter::after {
+.letterSingle .letterSingle__letter::after {
   content: "";
   position: absolute;
   bottom: 20%;
@@ -623,28 +756,28 @@ body {
   -o-transform: scaleX(0);
   transform: scaleX(0);
 }
-.single-letter:hover .single-letter__letter {
+.letterSingle:hover .letterSingle__letter {
   cursor: pointer;
   cursor: pointer;
   color: var(--color1-90);
 }
-.single-letter:hover .single-letter__letter::after {
+.letterSingle:hover .letterSingle__letter::after {
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
   -o-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-.single-letter {
+.letterSingle {
   position: relative;
 }
-.single-letter .single-letter__tooltip-grp {
+.letterSingle .letterSingle__tooltipWrp {
   display: none;
 }
-.single-letter a {
+.letterSingle a {
   text-decoration: none;
 }
-.single-letter:hover .single-letter__tooltip-grp {
+.letterSingle:hover .letterSingle__tooltipWrp {
   display: none;
   width: 20vw;
   display: flex;
@@ -671,17 +804,17 @@ body {
   font-weight: 300;
 }
 
-.letter-form {
+.letterMorph {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.letter-form__base-lang {
+.letterMorph__morphType {
   color: var(--color2-80);
   font-size: var(--step-0);
   font-family: var(--sans-EN);
 }
-.letter-form__set {
+.letterMorph__morphedForm {
   color: var(--color2-40);
   font-size: var(--step-4);
   font-weight: 200;
@@ -724,51 +857,51 @@ body {
   color: hsl(0, 50%, 50%);
 }
 
-.phonetics:nth-of-type(1) .single-letter__letter {
+.phonetics:nth-of-type(1) .letterSingle__letter {
   color: hsl(60, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(2) .single-letter__letter {
+.phonetics:nth-of-type(2) .letterSingle__letter {
   color: hsl(120, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(3) .single-letter__letter {
+.phonetics:nth-of-type(3) .letterSingle__letter {
   color: hsl(180, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(4) .single-letter__letter {
+.phonetics:nth-of-type(4) .letterSingle__letter {
   color: hsl(240, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(5) .single-letter__letter {
+.phonetics:nth-of-type(5) .letterSingle__letter {
   color: hsl(300, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(6) .single-letter__letter {
+.phonetics:nth-of-type(6) .letterSingle__letter {
   color: hsl(0, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(7) .single-letter__letter {
+.phonetics:nth-of-type(7) .letterSingle__letter {
   color: hsl(60, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(8) .single-letter__letter {
+.phonetics:nth-of-type(8) .letterSingle__letter {
   color: hsl(120, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(9) .single-letter__letter {
+.phonetics:nth-of-type(9) .letterSingle__letter {
   color: hsl(180, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(10) .single-letter__letter {
+.phonetics:nth-of-type(10) .letterSingle__letter {
   color: hsl(240, 50%, 50%) !important;
 }
 
-.phonetics:nth-of-type(11) .single-letter__letter {
+.phonetics:nth-of-type(11) .letterSingle__letter {
   color: hsl(300, 50%, 50%) !important;
 }
 
-.single-letter__letter {
+.letterSingle__letter {
   color: grey;
 }
 
@@ -784,44 +917,45 @@ body {
   display: none;
 }
 
-.title {
-  font-size: var(--step-4);
+.selectPanel {
+  display: flex;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.selectPanel__title {
+  font-family: var(--sans-EN);
+  font-weight: 200;
+  font-size: var(--step-3);
   color: var(--color1-90);
   text-transform: capitalize;
 }
-
-.lang-header {
-  display: flex;
+@media only screen and (orientation: portrait) {
+  .selectPanel__title {
+    width: 10ch;
+  }
 }
-.lang-header .selection-area {
+.selectPanel__selections {
+  gap: var(--space-xs);
   display: flex;
   flex-direction: column;
 }
 @media only screen and (orientation: landscape) {
-  .lang-header {
-    position: sticky;
-    top: 0;
+  .selectPanel {
     flex-direction: column;
-    padding-right: var(--space-l);
+    padding: var(--space-l);
     gap: var(--space-s);
-    border-right: 1px solid var(--color1-40);
-  }
-  .lang-header .selection-area {
-    gap: var(--space-xs);
+    border-right: 0.1px solid var(--color1-40);
   }
 }
 @media only screen and (orientation: portrait) {
-  .lang-header {
+  .selectPanel {
     position: sticky;
     top: 0;
     flex-direction: row;
-    justify-content: center;
     padding-bottom: var(--space-l);
     gap: var(--space-s);
     border-bottom: 1px solid var(--color1-40);
-  }
-  .lang-header .selection-area {
-    gap: var(--space-xs);
   }
 }
 
@@ -843,38 +977,18 @@ body {
   border: none;
 }
 
-.single-letter__order-num {
-  font-family: var(--single-letter__order-num);
+.letterSingle__letter.lang-jp.hiragana span:nth-of-type(2) {
+  display: none;
+}
+.letterSingle__letter.lang-jp.katakana span:nth-of-type(1) {
+  display: none;
 }
 
-.single-letter__notation-grp .single-letter__order-num {
+.letterSingle__letterOrder {
   color: var(--color1-80);
   font-size: var(--step-0);
   text-align: center;
-}
-
-.home-nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-m);
-  border-right: 1px solid var(--color1-40);
-  padding: var(--space-s);
-}
-
-.home-nav__lang {
-  text-decoration: none;
-  color: var(--color1-80);
-  font-size: var(--step-2);
-  font-family: var(--sans-EN);
-  text-transform: capitalize;
-  cursor: pointer;
-}
-
-.single-letter__letter.lang-jp.hiragana span:nth-of-type(2) {
-  display: none;
-}
-.single-letter__letter.lang-jp.katakana span:nth-of-type(1) {
-  display: none;
+  font-family: var(--number);
 }
 
 .letters.lang-jp {
@@ -890,7 +1004,7 @@ body {
   align-self: center;
   color: var(--color1-80);
 }
-.letters.lang-jp .pg-y .single-letter:nth-of-type(2) .single-letter__letter {
+.letters.lang-jp .pg-y .letterSingle:nth-of-type(2) .letterSingle__letter {
   text-align: center;
 }
 

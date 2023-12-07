@@ -8,12 +8,14 @@ import {
     AlphabetGR,
     AlphabetJP,
     HomeNav,
+    ToggleNav,
 } from './js/component';
 import { Route } from 'wouter';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <HomeNav />
+        <ToggleNav />
         <Route
             path="/greek"
             component={AlphabetGR}

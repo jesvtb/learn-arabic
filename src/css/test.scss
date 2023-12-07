@@ -2,18 +2,159 @@
 
 body {
     background: var(--color-001);
-    @include i.landscape {
-        padding: var(--space-l) var(--space-2xl);
+    // position: relative;
+    // @include i.landscape {
+    //     padding: var(--space-l) var(--space-2xl);
+    // }
+    // @include i.portrait {
+    //     padding: var(--space-m) var(--space-m);
+    // }
+}
+
+body:has(.selectPanel) {
+    .homeNav {
+        display: none;
     }
+}
+
+// body:has(.homeNav) {
+//     .navToggle {
+//         display: none;
+//     }
+// }
+
+// body:has(.letters) {
+//     .navToggle {
+//         display: unset;
+//     }
+// }
+
+.homeNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-l);
+    width: 100vw;
+    height: 100vh;
+    &__link {
+        text-decoration: none;
+        color: var(--color1-40);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:hover {
+            color: var(--color1-90);
+        }
+    }
+    &__localName {
+        font-size: var(--step-4);
+        &--ar {
+            font-family: var(--serif-AR);
+            font-weight: 400;
+            direction: rtl;
+            // line-height: 0.6em;
+        }
+        &--gr {
+            font-family: var(--serif-GR);
+            font-weight: 300;
+        }
+        &--jp {
+            font-family: var(--serif-JP);
+            font-weight: 400;
+            // font-size: larger;
+            scale: 0.9;
+        }
+    }
+    &__englishName {
+        font-size: var(--step-2);
+        font-family: var(--sans-EN);
+        font-weight: 200;
+        text-transform: capitalize;
+    }
+}
+
+.navToggle {
+    border: none;
+    width: var(--space-2xl);
+    position: fixed;
+    cursor: pointer;
+    z-index: 1;
+
+    left: var(--space-s);
+    bottom: var(--space-l);
     @include i.portrait {
-        padding: var(--space-m) var(--space-m);
+        right: var(--space-s);
+    }
+    &__icon {
+        width: 100%;
+        height: 100%;
+        // @include x.svgShadow;
+        path {
+            stroke: var(--color1-90);
+            stroke-width: 6px;
+            stroke-linecap: round;
+        }
+    }
+    &__link {
+        color: var(--color1-90);
+        font-family: var(--sans-EN);
+        font-size: var(--step-2);
+    }
+    &__icon--open {
+        path {
+            &:nth-of-type(1),
+            &:nth-of-type(3) {
+                transform-origin: 60% 60%;
+                transition-property: transform;
+            }
+            &:nth-of-type(1) {
+                @include i.crossBrowser(
+                    transform,
+                    rotate(45deg) translateY(30px) translateX(-10px)
+                );
+            }
+            &:nth-of-type(3) {
+                @include i.crossBrowser(
+                    transform,
+                    rotate(-45deg) translateY(-30px) translateX(10px)
+                );
+            }
+            &:nth-of-type(2) {
+                opacity: 0%;
+                transition-property: transform, opacity;
+                @include i.crossBrowser(transform, translateX(100px));
+            }
+        }
+    }
+}
+
+.toggleNav {
+    padding: var(--space-l);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    background: var(--color1-80);
+    position: fixed;
+    // border-right: 1px solid var(--color1-40);
+    &__link {
+        text-decoration: none;
+        color: var(--color1-10);
+        font-size: var(--step-2);
+        font-family: var(--sans-EN);
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    &--open {
+        z-index: 2;
     }
 }
 
 #root {
     @include i.landscape {
         display: flex;
-        gap: var(--space-xl);
+        // gap: var(--space-xl);
     }
     @include i.portrait {
         display: flex;
@@ -31,16 +172,7 @@ body {
     font-weight: 200;
 }
 
-.lang-gr.serif {
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.lang-gr.sans {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-        sans-serif;
-}
-
-.lang-gr.single-letter__letter {
+.lang-gr.letterSingle__letter {
     span:first-of-type {
         text-transform: capitalize;
     }
@@ -56,45 +188,72 @@ body {
     }
 }
 
-.single-letter__letter.lang-jp {
+.lang-jp.letterSingle__letter {
     font-size: var(--step-3);
 }
 
-.lang-ar.sans {
-    font-family: var(--sans-AR) !important;
-    // border: 2px solid red; // XXXX debug ⚠
+.lang-ar {
+    &--sans {
+        font-family: var(--sans-AR) !important;
+        font-weight: 400;
+    }
+    &--serif {
+        font-family: var(--serif-AR) !important;
+    }
 }
 
-.lang-ar.serif {
-    font-family: var(--serif-AR) !important;
+.lang-gr {
+    &--serif {
+        font-family: var(--serif-GR);
+        font-weight: 400;
+    }
+    &--sans {
+        font-family: var(--sans-GR);
+        font-weight: 300;
+    }
+}
+
+.lang-jp {
+    &--sans {
+        font-family: var(--sans-JP);
+        font-weight: 400;
+    }
+    &--serif {
+        font-family: var(--serif-JP);
+        font-weight: 500;
+    }
 }
 
 .base-lang {
     font-family: var(--sans-EN);
 }
 
-.letters {
+.lettersPanel {
     display: flex;
     flex-wrap: wrap;
     column-gap: var(--space-xl);
-    padding: 0 var(--space-s);
-
-    .single-letter {
+    @include i.landscape {
+        padding: 0 var(--space-3xl);
+    }
+    @include i.portrait {
+        padding: 0 var(--space-xs);
+    }
+    .letterSingle {
         display: inline-block;
     }
 }
 
-.letters .lang-ar {
+.lettersPanel .lang-ar {
     flex-direction: row-reverse;
 }
 
-.letters .lang-ar {
+.lettersPanel .lang-ar {
     flex-direction: row-reverse;
 }
 
-.single-letter__letter {
+.letterSingle__letter {
     @include i.landscape {
-        font-size: var(--step-5);
+        font-size: var(--step-4);
     }
 }
 
@@ -104,11 +263,11 @@ body {
     }
 }
 
-// single-letter__letterbase action after hover
+// letterSingle__letterbase action after hover
 // ==================================================
 
-.single-letter {
-    .single-letter__letter {
+.letterSingle {
+    .letterSingle__letter {
         &::after {
             content: '';
             position: absolute;
@@ -126,7 +285,7 @@ body {
         }
     }
     &:hover {
-        .single-letter__letter {
+        .letterSingle__letter {
             cursor: pointer;
             cursor: pointer;
             color: var(--color1-90);
@@ -137,19 +296,19 @@ body {
     }
 }
 
-// toooltip action after single-letter__letterhover
+// toooltip action after letterSingle__letterhover
 // ==================================================
 
-.single-letter {
+.letterSingle {
     position: relative;
-    .single-letter__tooltip-grp {
+    .letterSingle__tooltipWrp {
         display: none;
     }
     a {
         text-decoration: none;
     }
     &:hover {
-        .single-letter__tooltip-grp {
+        .letterSingle__tooltipWrp {
             display: none;
             width: 20vw;
             display: flex;
@@ -178,16 +337,16 @@ body {
     }
 }
 
-.letter-form {
+.letterMorph {
     display: flex;
     flex-direction: column;
     align-items: center;
-    &__base-lang {
+    &__morphType {
         color: var(--color2-80);
         font-size: var(--step-0);
         font-family: var(--sans-EN);
     }
-    &__set {
+    &__morphedForm {
         color: var(--color2-40);
         font-size: var(--step-4);
         font-weight: 200;
@@ -206,14 +365,14 @@ body {
 
 @for $i from 1 through 11 {
     .phonetics:nth-of-type(#{$i}) {
-        .single-letter__letter {
+        .letterSingle__letter {
             $hue: $i * 60;
             color: hsl($hue, 50%, 50%) !important;
         }
     }
 }
 
-.single-letter__letter {
+.letterSingle__letter {
     color: grey;
 }
 
@@ -240,44 +399,42 @@ body {
     }
 }
 
-.title {
-    font-size: var(--step-4);
-    color: var(--color1-90);
-    text-transform: capitalize;
-    // text-align: center;
-    // text-decoration: underline;
-    // margin-top: var(--space-l);
-}
-
-.lang-header {
+.selectPanel {
     display: flex;
-    .selection-area {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    // border: 2px solid red; // XXXX debug ⚠
+    // overflow-y: none;
+    &__title {
+        font-family: var(--sans-EN);
+        font-weight: 200;
+        font-size: var(--step-3);
+        color: var(--color1-90);
+        text-transform: capitalize;
+        @include i.portrait {
+            width: 10ch;
+        }
+    }
+    &__selections {
+        gap: var(--space-xs);
         display: flex;
         flex-direction: column;
     }
     @include i.landscape {
-        position: sticky;
-        top: 0;
-        // left: 0;
         flex-direction: column;
-        padding-right: var(--space-l);
+        padding: var(--space-l);
         gap: var(--space-s);
-        border-right: 1px solid var(--color1-40);
-        .selection-area {
-            gap: var(--space-xs);
-        }
+        border-right: 0.1px solid var(--color1-40);
     }
     @include i.portrait {
         position: sticky;
         top: 0;
         flex-direction: row;
-        justify-content: center;
+        // justify-content: center;
         padding-bottom: var(--space-l);
         gap: var(--space-s);
         border-bottom: 1px solid var(--color1-40);
-        .selection-area {
-            gap: var(--space-xs);
-        }
     }
 }
 
@@ -303,36 +460,7 @@ body {
     }
 }
 
-.single-letter__order-num {
-    font-family: var(--single-letter__order-num);
-}
-
-.single-letter__notation-grp {
-    .single-letter__order-num {
-        color: var(--color1-80);
-        font-size: var(--step-0);
-        text-align: center;
-    }
-}
-
-.home-nav {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-    border-right: 1px solid var(--color1-40);
-    padding: var(--space-s);
-}
-
-.home-nav__lang {
-    text-decoration: none;
-    color: var(--color1-80);
-    font-size: var(--step-2);
-    font-family: var(--sans-EN);
-    text-transform: capitalize;
-    cursor: pointer;
-}
-
-.single-letter__letter.lang-jp {
+.letterSingle__letter.lang-jp {
     &.hiragana {
         span:nth-of-type(2) {
             display: none;
@@ -345,10 +473,17 @@ body {
     }
 }
 
-// .phonetics {
-//     display: flex;
-//     flex-direction: row;
-// }
+.letterSingle {
+    &__letter {
+    }
+    &__letterOrder {
+        color: var(--color1-80);
+        font-size: var(--step-0);
+        text-align: center;
+        font-family: var(--number);
+    }
+}
+
 .letters.lang-jp {
     display: flex;
     flex-direction: row;
@@ -363,10 +498,10 @@ body {
         }
     }
     .pg-y {
-        .single-letter:nth-of-type(2) {
+        .letterSingle:nth-of-type(2) {
             // font-size: var(--step-5);
             // flex-grow: 3;
-            .single-letter__letter {
+            .letterSingle__letter {
                 text-align: center;
             }
             // justify-content: center;

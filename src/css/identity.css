@@ -1,14 +1,18 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300&family=Noto+Naskh+Arabic&family=Noto+Sans+Arabic:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fira+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap");
 :root {
+  --sans-JP: "Noto Sans JP", sans-serif;
+  --serif-JP: "Noto Serif JP", serif;
+  --serif-GR: "EB Garamond", serif;
+  --sans-GR: "Fira Sans", sans-serif;
   --serif-AR: "Noto Naskh Arabic", serif;
   --sans-AR: "Noto Sans Arabic", sans-serif;
   --display: "Playfair Display", serif;
   --serif: "Noto Naskh Arabic", serif;
   --sans: "Roboto Condensed", sans-serif;
   --sans-EN: "Mukta", sans-serif;
-  --single-letter__order-num: "Gill Sans", "Gill Sans MT", calibri,
-      "Trebuchet MS", sans-serif;
+  --number: "Gill Sans", "Gill Sans MT", calibri, "Trebuchet MS", sans-serif;
 }
 
 /* @link https://utopia.fyi/type/calculator?c=360,14,1.125,1366,16,1.414,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */

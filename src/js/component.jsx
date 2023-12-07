@@ -3,28 +3,95 @@ import { useEffect, useState } from 'react';
 import { marked } from 'marked';
 import { Link, useParams } from 'wouter';
 
+const langItems = [
+    {
+        slug: '/arabic',
+        englishName: 'arabic',
+        localName: 'العربية',
+        call2action: false,
+        abbreviation: 'ar',
+    },
+    {
+        slug: '/japanese',
+        englishName: 'japanese',
+        localName: '日本語',
+        call2action: false,
+        abbreviation: 'jp',
+    },
+    {
+        slug: '/greek',
+        englishName: 'greek',
+        localName: 'Ελληνικά',
+        call2action: false,
+        abbreviation: 'gr',
+    },
+];
+
 export function HomeNav() {
     return (
+        <div className="homeNav">
+            {langItems.map((item, i) => (
+                <Link
+                    to={item.slug}
+                    key={i}
+                    className="homeNav__link"
+                >
+                    <p
+                        className={`homeNav__localName homeNav__localName--${item.abbreviation}`}
+                    >
+                        {item.localName}
+                    </p>
+                    <p className="homeNav__englishName">{item.englishName}</p>
+                </Link>
+            ))}
+        </div>
+    );
+}
+
+export function ToggleNav() {
+    const [isToggled, setIsToggled] = useState(false);
+
+    const handleToggle = () => {
+        setIsToggled(!isToggled);
+    };
+
+    const handleButtonClick = () => {
+        setIsToggled(!isToggled);
+    };
+
+    return (
         <>
-            <nav className="home-nav">
-                <Link
-                    href="/greek"
-                    className="home-nav__lang"
+            <div
+                onClick={handleToggle}
+                className="navToggle"
+            >
+                <svg
+                    className={`navToggle__icon ${
+                        isToggled ? 'navToggle__icon--open' : ''
+                    }`}
+                    width="100"
+                    height="100"
+                    viewBox="0 0 100 100"
                 >
-                    greek
-                </Link>
-                <Link
-                    href="/arabic"
-                    className="home-nav__lang"
-                >
-                    arabic
-                </Link>
-                <Link
-                    href="/japanese"
-                    className="home-nav__lang"
-                >
-                    japanese
-                </Link>
+                    <path d="M 20,29 H 80" />
+                    <path d="M 20,50 H 60" />
+                    <path d="M 20,71 H 80" />
+                </svg>
+            </div>
+            <nav
+                className={`toggleNav ${isToggled ? 'toggleNav--open' : ''}`}
+                style={{ display: isToggled ? '' : 'none' }}
+            >
+                {langItems.map((item, i) => (
+                    <Link
+                        to={item.slug}
+                        key={i}
+                        onClick={handleButtonClick}
+                        className="toggleNav__link"
+                    >
+                        {item.localName}
+                    </Link>
+                ))}
             </nav>
         </>
     );
@@ -42,9 +109,9 @@ export function AlphabetJP() {
     };
     return (
         <>
-            <div className="lang-header">
+            <div className="selectPanel">
                 <Title lang={lang} />
-                <div className="selection-area">
+                <div className="selectPanel__selections">
                     <SelectFont onSelectFont={handleFontChange} />
                     <SelectSyllabary
                         onSelectSyllabary={handleSyllabaryChange}
@@ -71,9 +138,9 @@ export function AlphabetGR() {
     };
     return (
         <>
-            <div className="lang-header">
+            <div className="selectPanel">
                 <Title lang={lang} />
-                <div className="selection-area">
+                <div className="selectPanel__selections">
                     <SelectFont onSelectFont={handleFontChange} />
                     <SelectCase onSelectCase={handleCaseChange} />
                 </div>
@@ -100,9 +167,9 @@ export function AlphabetAR() {
 
     return (
         <>
-            <div className="lang-header">
+            <div className="selectPanel">
                 <Title lang={lang} />
-                <div className="selection-area">
+                <div className="selectPanel__selections">
                     <SelectFont onSelectFont={handleFontChange} />
                     <SelectPositionAR
                         onSelectPositionAR={handlePositionChange}
@@ -117,7 +184,7 @@ export function AlphabetAR() {
     );
 }
 
-// per single-letter__lettermapping of languages
+// per letterSingle__lettermapping of languages
 // ==================================================
 
 function MapLettersGR({ selectedFont, selectedCase }) {
@@ -143,32 +210,32 @@ function MapLettersGR({ selectedFont, selectedCase }) {
 
     return (
         <>
-            <div className="letters">
+            <div className="lettersPanel lang-gr">
                 {letters.map((letter, i) => {
                     return (
                         <div
                             key={i}
-                            className={`single-letter`}
+                            className={`letterSingle`}
                         >
                             <Link to={`/greek/letter/${letter.id}`}>
                                 <h1
-                                    className={`single-letter__letter lang-gr ${selectedFont} ${selectedCase}`}
+                                    className={`letterSingle__letter lang-gr lang-gr--${selectedFont} ${selectedCase}`}
                                 >
                                     <span>{letter.alphabet}</span>
                                     <span>{letter.alphabet}</span>
                                 </h1>
-                                <div className="single-letter__notation-grp">
-                                    <p className="single-letter__order-num">
+                                <div className="letterSingle__notationWrp">
+                                    <p className="letterSingle__letterOrder">
                                         {letter.id}
                                     </p>
                                 </div>
                             </Link>
-                            <div className="single-letter__tooltip-grp">
-                                <div className="letter-form">
-                                    <h2 className="letter-form__base-lang">
+                            <div className="letterSingle__tooltipWrp">
+                                <div className="letterMorph__wrapper">
+                                    <h2 className="letterMorph__morphType">
                                         latin name
                                     </h2>
-                                    <h2 className="letter-form__base-lang">
+                                    <h2 className="letterMorph__morphType">
                                         {letter.latinName}
                                     </h2>
                                 </div>
@@ -213,7 +280,7 @@ function MapLettersJP({ selectedFont, selectedSyllabary }) {
 
     return (
         <>
-            <div className="letters lang-jp">
+            <div className="lettersPanel lang-jp">
                 {Object.entries(groupedLetters).map(
                     ([phoneticGroup, letters]) => (
                         <div
@@ -224,27 +291,27 @@ function MapLettersJP({ selectedFont, selectedSyllabary }) {
                             {letters.map((letter, i) => (
                                 <div
                                     key={i}
-                                    className={`single-letter`}
+                                    className={`letterSingle`}
                                 >
                                     <Link to={`/japanese/letter/${letter.id}`}>
                                         <h1
-                                            className={`single-letter__letter lang-jp ${selectedFont} ${selectedSyllabary}`}
+                                            className={`letterSingle__letter lang-jp lang-jp--${selectedFont} ${selectedSyllabary}`}
                                         >
                                             <span>{letter.hiragana}</span>
                                             <span>{letter.katakana}</span>
                                         </h1>
-                                        <div className="single-letter__notation-grp">
-                                            <p className="single-letter__order-num">
+                                        <div className="letterSingle__notationWrp">
+                                            <p className="letterSingle__letterOrder">
                                                 {letter.id}
                                             </p>
                                         </div>
                                     </Link>
-                                    <div className="single-letter__tooltip-grp">
-                                        <div className="letter-form">
-                                            <h2 className="letter-form__base-lang">
+                                    <div className="letterSingle__tooltipWrp">
+                                        <div className="letterMorph__wrapper">
+                                            <h2 className="letterMorph__morphType">
                                                 latin name
                                             </h2>
-                                            <h2 className="letter-form__base-lang">
+                                            <h2 className="letterMorph__morphType">
                                                 {letter.romaji}
                                             </h2>
                                         </div>
@@ -284,7 +351,7 @@ function MapLettersAR({ selectedFont, selectedForm }) {
 
     return (
         <>
-            <div className="letters lang-ar">
+            <div className="lettersPanel lang-ar">
                 {letters.map((letter, i) => {
                     const formgroup = letter.formgroup;
                     const html = marked.parse(letter.medialinword);
@@ -292,7 +359,7 @@ function MapLettersAR({ selectedFont, selectedForm }) {
                     return (
                         <div
                             key={i}
-                            className={`single-letter ${formgroup}`}
+                            className={`letterSingle ${formgroup}`}
                         >
                             <Link
                                 to={`/arabic/letter/${letter.id}`}
@@ -300,29 +367,29 @@ function MapLettersAR({ selectedFont, selectedForm }) {
                                 // onClick={redirectToPage()}
                             >
                                 <h1
-                                    className={`single-letter__letter lang-ar ${selectedFont} ${selectedForm}`}
+                                    className={`letterSingle__letter lang-ar lang-ar--${selectedFont} ${selectedForm}`}
                                 >
                                     <span>ـ</span>
                                     {letter.alphabet}
                                     <span>ـ</span>
                                 </h1>
-                                <div className="single-letter__notation-grp">
-                                    <p className="single-letter__order-num">
+                                <div className="letterSingle__notationWrp">
+                                    <p className="letterSingle__letterOrder">
                                         {letter.id}
                                     </p>
                                 </div>
                             </Link>
-                            <div className="single-letter__tooltip-grp">
+                            <div className="letterSingle__tooltipWrp">
                                 {forms.map((form, i) => (
                                     <div
                                         key={i}
-                                        className="letter-form"
+                                        className="letterMorph__wrapper"
                                     >
-                                        <h2 className="letter-form__base-lang">
+                                        <h2 className="letterMorph__morphType">
                                             {form}
                                         </h2>
                                         <h2
-                                            className={`letter-form__set ${form}`}
+                                            className={`letterMorph__morphedForm ${form}`}
                                         >
                                             <span>ـ</span>
                                             {letter.alphabet}
@@ -339,7 +406,7 @@ function MapLettersAR({ selectedFont, selectedForm }) {
     );
 }
 
-// selection-area components
+// selections components
 // ==================================================
 
 function MapSelections({ options, defaultOption }) {
@@ -379,7 +446,7 @@ function SelectFont({ onSelectFont }) {
             className="dropdown"
         >
             <MapSelections
-                defaultOption="font type"
+                defaultOption="serif"
                 options={options}
             />
         </select>
@@ -453,7 +520,7 @@ function SelectSyllabary({ onSelectSyllabary }) {
 // ==================================================
 
 function Title({ lang }) {
-    return <div className="base-lang title">{lang} alphabet basics</div>;
+    return <div className="selectPanel__title">{lang} alphabet basics</div>;
 }
 
 export function LetterPage() {
