@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "type": "vowel",
+        "form": "अ",
+        "roman": "a",
+        "phoneticgroup": "pg-a"
+    },
+    {
+        "id": 2,
+        "type": "vowel",
+        "form": "आ",
+        "roman": "ā",
+        "phoneticgroup": "pg-a"
+    },
+    {
+        "id": 3,
+        "type": "vowel",
+        "form": "इ",
+        "roman": "i",
+        "phoneticgroup": "pg-i"
+    },
+    {
+        "id": 4,
+        "type": "vowel",
+        "form": "ई",
+        "roman": "ī",
+        "phoneticgroup": "pg-i"
+    },
+    {
+        "id": 5,
+        "type": "vowel",
+        "form": "उ",
+        "roman": "u",
+        "phoneticgroup": "pg-u"
+    },
+    {
+        "id": 6,
+        "type": "vowel",
+        "form": "ऊ",
+        "roman": "ū",
+        "phoneticgroup": "pg-u"
+    },
+    {
+        "id": 7,
+        "type": "vowel",
+        "form": "ऋ",
+        "roman": "ṛ",
+        "phoneticgroup": "pg-ṛ"
+    },
+    {
+        "id": 8,
+        "type": "vowel",
+        "form": "ॠ",
+        "roman": "ṝ",
+        "phoneticgroup": "pg-ṛ"
+    },
+    {
+        "id": 9,
+        "type": "vowel",
+        "form": "ऌ",
+        "roman": "ḷ",
+        "phoneticgroup": "pg-ḷ"
+    },
+    {
+        "id": 10,
+        "type": "vowel",
+        "form": "ॡ",
+        "roman": "ḹ",
+        "phoneticgroup": "pg-ḷ"
+    },
+    {
+        "id": 11,
+        "type": "vowel",
+        "form": "ए",
+        "roman": "e",
+        "phoneticgroup": "pg-e"
+    },
+    {
+        "id": 12,
+        "type": "vowel",
+        "form": "ऐ",
+        "roman": "ai",
+        "phoneticgroup": "pg-ai"
+    }
+]

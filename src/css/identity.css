@@ -1,11 +1,14 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300&family=Noto+Naskh+Arabic&family=Noto+Sans+Arabic:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fira+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;500;700;900&family=Noto+Sans:wght@300;500&family=Noto+Serif+Devanagari:wght@300;500&family=Noto+Serif+SC:wght@300;500;700&family=Source+Serif+4:opsz,wght@8..60,200;8..60,300;8..60,400&display=swap");
 :root {
   --sans-JP: "Noto Sans JP", sans-serif;
   --serif-JP: "Noto Serif JP", serif;
   --serif-GR: "EB Garamond", serif;
   --sans-GR: "Fira Sans", sans-serif;
+  --sans-HI: "Noto Sans", sans-serif;
+  --serif-HI: "Noto Serif Devanagari", serif;
   --serif-AR: "Noto Naskh Arabic", serif;
   --sans-AR: "Noto Sans Arabic", sans-serif;
   --display: "Playfair Display", serif;

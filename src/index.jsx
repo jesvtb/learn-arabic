@@ -7,6 +7,7 @@ import {
     LetterPage,
     AlphabetGR,
     AlphabetJP,
+    AlphabetHI,
     HomeNav,
     ToggleNav,
 } from './js/component';
@@ -19,6 +20,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route
             path="/greek"
             component={AlphabetGR}
+        />
+        <Route
+            path="/hindi"
+            component={AlphabetHI}
         />
         <Route
             path="/arabic"

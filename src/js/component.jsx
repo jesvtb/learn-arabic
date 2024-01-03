@@ -12,6 +12,13 @@ const langItems = [
         abbreviation: 'ar',
     },
     {
+        slug: '/hindi',
+        englishName: 'hindi',
+        localName: 'हिन्दी',
+        call2action: false,
+        abbreviation: 'hi',
+    },
+    {
         slug: '/japanese',
         englishName: 'japanese',
         localName: '日本語',
@@ -184,8 +191,72 @@ export function AlphabetAR() {
     );
 }
 
+export function AlphabetHI() {
+    const [selectedFont, setSelectedFont] = useState('');
+    const lang = 'Hindi';
+    const handleFontChange = (selectedValue) => {
+        setSelectedFont(selectedValue);
+    };
+    return (
+        <>
+            <div className="selectPanel">
+                <Title lang={lang} />
+                <div className="selectPanel__selections">
+                    <SelectFont onSelectFont={handleFontChange} />
+                </div>
+            </div>
+            <MapLettersHI selectedFont={selectedFont} />
+        </>
+    );
+}
+
 // per letterSingle__lettermapping of languages
 // ==================================================
+
+function MapLettersHI({ selectedFont }) {
+    const [letters, setLetters] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('./alphabet-HI.json');
+                const lettersData = response.data;
+                if (Array.isArray(lettersData)) {
+                    setLetters(lettersData);
+                } else {
+                    console.error('AlphabetGR data is not an array');
+                }
+            } catch (error) {
+                console.error('Error fetching alphabet data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return (
+        <>
+            <div className="lettersPanel lang-hi">
+                {letters.map((letter, i) => {
+                    const phoneticgroup = letter.phoneticgroup;
+                    return (
+                        <div
+                            key={i}
+                            className={`letterSingle ${phoneticgroup}`}
+                        >
+                            <Link to={`/hindi/letter/${letter.id}`}>
+                                <h1
+                                    className={`letterSingle__letter lang-hi lang-hi--${selectedFont}`}
+                                >
+                                    <span>{letter.form}</span>
+                                </h1>
+                            </Link>
+                        </div>
+                    );
+                })}
+            </div>
+        </>
+    );
+}
 
 function MapLettersGR({ selectedFont, selectedCase }) {
     const [letters, setLetters] = useState([]);

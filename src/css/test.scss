@@ -172,6 +172,16 @@ body:has(.selectPanel) {
     font-weight: 200;
 }
 
+.lang-hi {
+    font-weight: 200;
+}
+
+.lang-hi.letterSingle__letter {
+    span {
+        font-size: var(--step-3);
+    }
+}
+
 .lang-gr.letterSingle__letter {
     span:first-of-type {
         text-transform: capitalize;
@@ -190,6 +200,17 @@ body:has(.selectPanel) {
 
 .lang-jp.letterSingle__letter {
     font-size: var(--step-3);
+}
+
+.lang-hi {
+    &--sans {
+        font-family: var(--sans-HI) !important;
+        font-weight: 300;
+    }
+    &--serif {
+        font-family: var(--serif-HI) !important;
+        font-weight: 300;
+    }
 }
 
 .lang-ar {
@@ -247,10 +268,6 @@ body:has(.selectPanel) {
     flex-direction: row-reverse;
 }
 
-.lettersPanel .lang-ar {
-    flex-direction: row-reverse;
-}
-
 .letterSingle__letter {
     @include i.landscape {
         font-size: var(--step-4);
@@ -271,17 +288,35 @@ body:has(.selectPanel) {
         &::after {
             content: '';
             position: absolute;
-            bottom: 20%;
-            height: 5%;
-            width: 150%;
-            left: -20%;
             @include i.motion-1;
             border-radius: 5px;
             background: var(--color1-90);
             transform-origin: bottom left;
             transition-property: transform;
-            // z-index: -1;
             @include i.crossBrowser(transform, scaleX(0));
+        }
+        &.lang-ar::after {
+            top: 35%;
+            height: 1%;
+            width: 150%;
+            left: -20%;
+        }
+        &.lang-hi::after {
+            height: 1%;
+            bottom: 0%;
+        }
+        &.lang-gr::after {
+            height: 1%;
+            top: 40%;
+            // bottom: 0%;
+            width: 140%;
+            left: -20%;
+        }
+        &.lang-jp::after {
+            height: 2%;
+            top: 60%;
+            width: 110%;
+            left: -5%;
         }
     }
     &:hover {

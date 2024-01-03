@@ -1,11 +1,14 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300&family=Noto+Naskh+Arabic&family=Noto+Sans+Arabic:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fira+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;500;700;900&family=Noto+Sans:wght@300;500&family=Noto+Serif+Devanagari:wght@300;500&family=Noto+Serif+SC:wght@300;500;700&family=Source+Serif+4:opsz,wght@8..60,200;8..60,300;8..60,400&display=swap");
 :root {
   --sans-JP: "Noto Sans JP", sans-serif;
   --serif-JP: "Noto Serif JP", serif;
   --serif-GR: "EB Garamond", serif;
   --sans-GR: "Fira Sans", sans-serif;
+  --sans-HI: "Noto Sans", sans-serif;
+  --serif-HI: "Noto Serif Devanagari", serif;
   --serif-AR: "Noto Naskh Arabic", serif;
   --sans-AR: "Noto Sans Arabic", sans-serif;
   --display: "Playfair Display", serif;
@@ -331,6 +334,14 @@ body:has(.selectPanel) .homeNav {
   font-weight: 200;
 }
 
+.lang-hi {
+  font-weight: 200;
+}
+
+.lang-hi.letterSingle__letter span {
+  font-size: var(--step-3);
+}
+
 .lang-gr.letterSingle__letter span:first-of-type {
   text-transform: capitalize;
 }
@@ -343,6 +354,15 @@ body:has(.selectPanel) .homeNav {
 
 .lang-jp.letterSingle__letter {
   font-size: var(--step-3);
+}
+
+.lang-hi--sans {
+  font-family: var(--sans-HI) !important;
+  font-weight: 300;
+}
+.lang-hi--serif {
+  font-family: var(--serif-HI) !important;
+  font-weight: 300;
 }
 
 .lang-ar--sans {
@@ -399,10 +419,6 @@ body:has(.selectPanel) .homeNav {
   flex-direction: row-reverse;
 }
 
-.lettersPanel .lang-ar {
-  flex-direction: row-reverse;
-}
-
 @media only screen and (orientation: landscape) {
   .letterSingle__letter {
     font-size: var(--step-4);
@@ -416,10 +432,6 @@ body:has(.selectPanel) .homeNav {
 .letterSingle .letterSingle__letter::after {
   content: "";
   position: absolute;
-  bottom: 20%;
-  height: 5%;
-  width: 150%;
-  left: -20%;
   transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9);
   transition-duration: 0.2s;
   border-radius: 5px;
@@ -427,6 +439,28 @@ body:has(.selectPanel) .homeNav {
   transform-origin: bottom left;
   transition-property: transform;
   transform: scaleX(0);
+}
+.letterSingle .letterSingle__letter.lang-ar::after {
+  top: 35%;
+  height: 1%;
+  width: 150%;
+  left: -20%;
+}
+.letterSingle .letterSingle__letter.lang-hi::after {
+  height: 1%;
+  bottom: 0%;
+}
+.letterSingle .letterSingle__letter.lang-gr::after {
+  height: 1%;
+  top: 40%;
+  width: 140%;
+  left: -20%;
+}
+.letterSingle .letterSingle__letter.lang-jp::after {
+  height: 2%;
+  top: 60%;
+  width: 110%;
+  left: -5%;
 }
 .letterSingle:hover .letterSingle__letter {
   cursor: pointer;
