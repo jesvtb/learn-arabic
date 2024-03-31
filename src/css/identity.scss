@@ -80,12 +80,38 @@
 
 // colorscale
 // ==================================================
-:root {
-    --color1-40: #5b5071;
+
+body[data-theme='dark'] {
     --color1-90: #eeedf2;
     --color1-80: hsl(288, 22%, 77%);
+    --color1-40: #5b5071;
     --color1-10: hsl(312, 20%, 19%);
     --color1-10-opaque: hsla(312, 20%, 19%, 50%);
+
+    --color2-90: #f9f2ea;
+    --color2-80: #e8c398;
+    --color2-40: #a67a44;
+    --color2-10: #653c09;
+    --color2-80-opaque: hsla(32, 63%, 75%, 40%);
+
+    --color3-90: #fdedf2;
+    --color3-80: #ecadb9;
+    --color3-40: hsl(11, 57%, 42%);
+    --color3-10: hsl(7, 62%, 26%);
+    --color3-80-opaque: hsla(8, 100%, 21%, 20%);
+
+    --color-100: rgba(255, 255, 255);
+    --color-100-opaque: rgba(255, 255, 255, 0%);
+    --color-001: rgb(24, 24, 34);
+    --color-001-opaque: hsla(0, 0%, 0%, 30%);
+}
+
+body[data-theme='light'] {
+    --color1-10: #eeedf2;
+    --color1-40: hsl(288, 22%, 77%);
+    --color1-80: #5b5071;
+    --color1-90: hsl(312, 20%, 19%);
+    --color1-90-opaque: hsla(312, 20%, 19%, 50%);
 
     --color2-40: #a67a44;
     --color2-90: #f9f2ea;
@@ -99,10 +125,10 @@
     --color3-10: hsl(7, 62%, 26%);
     --color3-80-opaque: hsla(8, 100%, 21%, 20%);
 
-    --color-100: rgba(255, 255, 255);
-    --color-100-opaque: rgba(255, 255, 255, 0%);
-    --color-001: rgb(24, 24, 34);
-    --color-001-opaque: hsla(0, 0%, 0%, 30%);
+    --color-001: rgba(255, 255, 255);
+    --color-001-opaque: rgba(255, 255, 255, 0%);
+    --color-100: rgb(24, 24, 34);
+    --color-100-opaque: hsla(0, 0%, 0%, 30%);
 }
 
 // $base-hue:
@@ -209,6 +235,23 @@ $base-lightness: 80%;
         calc(0.47rem + 1.79vw),
         2rem
     ); /* Space s-l: 14px → 32px */
+}
+
+// typography
+// ==================================================
+
+// @mixin buttonStd {
+//     font-family: var(--sans-EN);
+//     font-size: var(--step-1);
+//     padding-inline: var(--space-s);
+//     padding-block: var(--space-3xs);
+// }
+
+@mixin buttonStd {
+    font-family: var(--sans-EN);
+    font-size: var(--step-1);
+    padding-inline: var(--space-s);
+    padding-block: var(--space-3xs);
 }
 
 // cross broswer adapation

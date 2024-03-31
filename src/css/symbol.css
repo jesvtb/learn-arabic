@@ -217,3 +217,79 @@ body[data-theme=light] {
   --shadow-1: 1px 1.5px 5px var(--color1-10);
   --shadow-2: 0.5px 0px 3px var(--color2-90);
 }
+
+.symbolSingle {
+  display: inline-block;
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.symbolSingle a {
+  text-decoration: none;
+}
+.symbolSingle__tooltipWrp {
+  display: flex;
+  visibility: hidden;
+  z-index: 1;
+  background: var(--color1-10);
+}
+@media only screen and (orientation: landscape) {
+  .symbolSingle__tooltipWrp {
+    position: absolute;
+    top: 100%;
+  }
+}
+@media only screen and (orientation: portrait) {
+  .symbolSingle__tooltipWrp {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+.symbolSingle:hover .symbolSingle__tooltipWrp {
+  visibility: visible;
+}
+.symbolSingle:hover .symbolSingle__symbol {
+  cursor: pointer;
+  color: var(--color1-90);
+}
+.symbolSingle__notationWrp {
+  margin-block: 0;
+}
+.symbolSingle__symbolOrder {
+  color: var(--color1-80);
+  font-size: var(--step-0);
+  text-align: center;
+  font-family: var(--number);
+  margin-block: var(--space-xs);
+}
+.symbolSingle__symbol {
+  color: grey;
+  margin-block: 0;
+  position: relative;
+}
+@media only screen and (orientation: landscape) {
+  .symbolSingle__symbol {
+    font-size: var(--step-4);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .symbolSingle__symbol {
+    font-size: var(--step-6);
+  }
+}
+.symbolSingle__symbol::after {
+  content: "";
+  position: absolute;
+  transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9);
+  transition-duration: 0.2s;
+  background: var(--color1-90);
+  transform-origin: bottom left;
+  height: 3px;
+  width: 145%;
+  left: -20%;
+  bottom: -10%;
+  border-radius: var(--space-3xs);
+  transition-property: transform;
+  transform: scaleX(0);
+}

@@ -1,0 +1,15 @@
+.lang-hi {
+  font-weight: 200;
+}
+.lang-hi--sans {
+  font-family: var(--sans-HI) !important;
+  font-weight: 300;
+}
+.lang-hi--serif {
+  font-family: var(--serif-HI) !important;
+  font-weight: 300;
+}
+
+.lang-hi.symbolSingle__symbol span {
+  font-size: var(--step-3);
+}

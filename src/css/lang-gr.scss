@@ -1,0 +1,29 @@
+@use 'identity' as i;
+
+.lang-gr {
+    font-weight: 200;
+    &--serif {
+        font-family: var(--serif-GR);
+        font-weight: 400;
+    }
+    &--sans {
+        font-family: var(--sans-GR);
+        font-weight: 300;
+    }
+}
+
+.lang-gr.symbolSingle__symbol {
+    span:first-of-type {
+        text-transform: capitalize;
+    }
+    &.lowercase {
+        span:first-of-type {
+            display: none;
+        }
+    }
+    &.uppercase {
+        span:last-of-type {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@use 'identity' as i;
+
+.lang-jp {
+    &--sans {
+        font-family: var(--sans-JP);
+        font-weight: 400;
+    }
+    &--serif {
+        font-family: var(--serif-JP);
+        font-weight: 500;
+    }
+}
+
+@for $i from 1 through 11 {
+    .phonetics:nth-of-type(#{$i}) {
+        .symbolSingle__symbol {
+            $hue: $i * 60;
+            color: hsl($hue, 50%, 50%) !important;
+        }
+    }
+}
+
+.lang-jp.symbolSingle__symbol {
+    font-size: var(--step-3);
+}

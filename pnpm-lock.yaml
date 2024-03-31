@@ -1552,7 +1552,7 @@ packages:
             hasown: 2.0.0
         dev: true
 
-    /is-single-letter__order-num-object@1.0.7:
+    /is-single-symbol__order-num-object@1.0.7:
         resolution:
             {
                 integrity: sha512-k1U0IRzLMo7ZlYIfzRu23Oh6MiIFasgpb9X76eqfFZAqwH44UI4KTBvBYIZ1dSL9ZzChTB9ShHfLkR4pdW5krQ==,
@@ -3671,7 +3671,7 @@ packages:
         dependencies:
             is-bigint: r2.cnpmjs.org/is-bigint@1.0.4
             is-boolean-object: r2.cnpmjs.org/is-boolean-object@1.1.2
-            is-single-letter__order-num-object: 1.0.7
+            is-single-symbol__order-num-object: 1.0.7
             is-string: r2.cnpmjs.org/is-string@1.0.7
             is-symbol: r2.cnpmjs.org/is-symbol@1.0.4
         dev: true

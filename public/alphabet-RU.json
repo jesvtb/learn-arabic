@@ -1,0 +1,157 @@
+[
+    {
+        "id": 1,
+        "alphabet": "а",
+        "latin": "a"
+    },
+    {
+        "id": 2,
+        "alphabet": "б",
+        "latin": "b"
+    },
+    {
+        "id": 3,
+        "alphabet": "в",
+        "latin": "v"
+    },
+    {
+        "id": 4,
+        "alphabet": "г",
+        "latin": "g"
+    },
+    {
+        "id": 5,
+        "alphabet": "д",
+        "latin": "d"
+    },
+    {
+        "id": 6,
+        "alphabet": "е",
+        "latin": "e"
+    },
+    {
+        "id": 7,
+        "alphabet": "ж",
+        "latin": "zh"
+    },
+    {
+        "id": 8,
+        "alphabet": "з",
+        "latin": "z"
+    },
+    {
+        "id": 9,
+        "alphabet": "и",
+        "latin": "i"
+    },
+    {
+        "id": 10,
+        "alphabet": "й",
+        "latin": "j"
+    },
+    {
+        "id": 11,
+        "alphabet": "к",
+        "latin": "k"
+    },
+    {
+        "id": 12,
+        "alphabet": "л",
+        "latin": "l"
+    },
+    {
+        "id": 13,
+        "alphabet": "м",
+        "latin": "m"
+    },
+    {
+        "id": 14,
+        "alphabet": "н",
+        "latin": "n"
+    },
+    {
+        "id": 15,
+        "alphabet": "о",
+        "latin": "o"
+    },
+    {
+        "id": 16,
+        "alphabet": "п",
+        "latin": "p"
+    },
+    {
+        "id": 17,
+        "alphabet": "р",
+        "latin": "r"
+    },
+    {
+        "id": 18,
+        "alphabet": "с",
+        "latin": "s"
+    },
+    {
+        "id": 19,
+        "alphabet": "т",
+        "latin": "t"
+    },
+    {
+        "id": 20,
+        "alphabet": "у",
+        "latin": "u"
+    },
+    {
+        "id": 21,
+        "alphabet": "ф",
+        "latin": "f"
+    },
+    {
+        "id": 22,
+        "alphabet": "х",
+        "latin": "h"
+    },
+    {
+        "id": 23,
+        "alphabet": "ц",
+        "latin": "ts"
+    },
+    {
+        "id": 24,
+        "alphabet": "ч",
+        "latin": "ch"
+    },
+    {
+        "id": 25,
+        "alphabet": "ш",
+        "latin": "sh"
+    },
+    {
+        "id": 26,
+        "alphabet": "щ",
+        "latin": "shch"
+    },
+    {
+        "id": 27,
+        "alphabet": "ъ",
+        "latin": "'"
+    },
+    {
+        "id": 28,
+        "alphabet": "ы",
+        "latin": "y"
+    },
+    {
+        "id": 29,
+        "alphabet": "ь",
+        "latin": "'"
+    },
+    {
+        "id": 30,
+        "alphabet": "ю",
+        "latin": "yu"
+    },
+    {
+        "id": 31,
+        "alphabet": "я",
+        "latin": "ya"
+    }
+]

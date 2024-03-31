@@ -217,3 +217,25 @@ body[data-theme=light] {
   --shadow-1: 1px 1.5px 5px var(--color1-10);
   --shadow-2: 0.5px 0px 3px var(--color2-90);
 }
+
+.lang-gr {
+  font-weight: 200;
+}
+.lang-gr--serif {
+  font-family: var(--serif-GR);
+  font-weight: 400;
+}
+.lang-gr--sans {
+  font-family: var(--sans-GR);
+  font-weight: 300;
+}
+
+.lang-gr.symbolSingle__symbol span:first-of-type {
+  text-transform: capitalize;
+}
+.lang-gr.symbolSingle__symbol.lowercase span:first-of-type {
+  display: none;
+}
+.lang-gr.symbolSingle__symbol.uppercase span:last-of-type {
+  display: none;
+}

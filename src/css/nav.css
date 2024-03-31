@@ -217,3 +217,139 @@ body[data-theme=light] {
   --shadow-1: 1px 1.5px 5px var(--color1-10);
   --shadow-2: 0.5px 0px 3px var(--color2-90);
 }
+
+.homeNav {
+  display: flex;
+}
+@media only screen and (orientation: landscape) {
+  .homeNav {
+    gap: var(--space-l);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    padding: 0 var(--space-3xl);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .homeNav {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: var(--space-xl);
+    height: 100vh;
+    width: 100vw;
+  }
+}
+.homeNav__link {
+  text-decoration: none;
+  color: var(--color1-40);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeNav__link:hover {
+  color: var(--color1-90);
+}
+.homeNav__localName {
+  font-size: var(--step-4);
+  margin: 0 0 var(--space-xs);
+}
+.homeNav__localName--ar {
+  font-family: var(--serif-AR);
+  font-weight: 400;
+  direction: rtl;
+}
+.homeNav__localName--gr {
+  font-family: var(--serif-GR);
+  font-weight: 300;
+}
+.homeNav__localName--jp {
+  font-family: var(--serif-JP);
+  font-weight: 500;
+  scale: 0.8;
+}
+.homeNav__englishName {
+  margin: 0;
+  font-size: var(--step-1);
+  font-family: var(--sans-EN);
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.navToggle {
+  border: none;
+  width: var(--space-2xl);
+  position: fixed;
+  cursor: pointer;
+  z-index: 2;
+}
+@media only screen and (orientation: landscape) {
+  .navToggle {
+    left: var(--space-s);
+    bottom: var(--space-l);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .navToggle {
+    top: 0;
+    right: var(--space-m);
+  }
+}
+.navToggle__icon {
+  width: 100%;
+  height: 100%;
+}
+.navToggle__icon path {
+  stroke: var(--color1-90);
+  stroke-width: 6px;
+  stroke-linecap: round;
+}
+.navToggle__link {
+  color: var(--color1-90);
+  font-family: var(--sans-EN);
+  font-size: var(--step-2);
+}
+.navToggle__icon--open path:nth-of-type(1), .navToggle__icon--open path:nth-of-type(3) {
+  transform-origin: 60% 60%;
+  transition-property: transform;
+}
+.navToggle__icon--open path:nth-of-type(1) {
+  transform: rotate(45deg) translateY(30px) translateX(-10px);
+}
+.navToggle__icon--open path:nth-of-type(3) {
+  transform: rotate(-45deg) translateY(-30px) translateX(10px);
+}
+.navToggle__icon--open path:nth-of-type(2) {
+  opacity: 0%;
+  transition-property: transform, opacity;
+  transform: translateX(100px);
+}
+
+.themeToggle {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+}
+
+.toggleNav {
+  padding: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  background: var(--color-100);
+  position: fixed;
+  height: 100vh;
+  width: calc(var(--space-xl) * 5);
+}
+.toggleNav__link {
+  text-decoration: none;
+  color: var(--color1-10);
+  font-size: var(--step-2);
+  cursor: pointer;
+}
+.toggleNav--open {
+  z-index: 1;
+}

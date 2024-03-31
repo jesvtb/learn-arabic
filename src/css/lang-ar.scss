@@ -1,0 +1,65 @@
+@use 'identity' as i;
+
+.lang-ar {
+    font-weight: 300;
+    direction: rtl;
+    // writing-mode: sideways-rl;
+    &--sans {
+        font-family: var(--sans-AR) !important;
+        font-weight: 400;
+    }
+    &--serif {
+        font-family: var(--serif-AR) !important;
+    }
+}
+
+@for $i from 1 through 9 {
+    .fg-#{$i} {
+        h1 {
+            $hue: $i * 80;
+            color: hsl($hue, 50%, 50%);
+        }
+    }
+}
+
+.alone {
+    span {
+        display: none;
+    }
+}
+
+.initial {
+    span:nth-of-type(1) {
+        display: none;
+    }
+}
+
+.final {
+    span:nth-of-type(2) {
+        display: none;
+    }
+}
+
+.symbolMorph {
+    &__wrapper {
+        padding: 0 var(--space-3xs);
+        width: 80px;
+    }
+    &__wrapper:not(:first-of-type) {
+        border-right: 1px solid var(--color-100-opaque);
+    }
+    &__morphType {
+        color: var(--color2-80);
+        font-size: var(--step-0);
+        font-family: var(--sans-EN);
+        text-align: center;
+    }
+    &__morphedForm {
+        // margin-block: var(--space-m);
+        text-align: center;
+        color: var(--color2-40);
+        font-size: var(--step-4);
+        font-weight: 200;
+        line-height: 1rem;
+    }
+}

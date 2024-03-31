@@ -217,3 +217,60 @@ body[data-theme=light] {
   --shadow-1: 1px 1.5px 5px var(--color1-10);
   --shadow-2: 0.5px 0px 3px var(--color2-90);
 }
+
+.lang-jp--sans {
+  font-family: var(--sans-JP);
+  font-weight: 400;
+}
+.lang-jp--serif {
+  font-family: var(--serif-JP);
+  font-weight: 500;
+}
+
+.phonetics:nth-of-type(1) .symbolSingle__symbol {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(2) .symbolSingle__symbol {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(3) .symbolSingle__symbol {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(4) .symbolSingle__symbol {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(5) .symbolSingle__symbol {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(6) .symbolSingle__symbol {
+  color: hsl(0, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(7) .symbolSingle__symbol {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(8) .symbolSingle__symbol {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(9) .symbolSingle__symbol {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(10) .symbolSingle__symbol {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.phonetics:nth-of-type(11) .symbolSingle__symbol {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.lang-jp.symbolSingle__symbol {
+  font-size: var(--step-3);
+}

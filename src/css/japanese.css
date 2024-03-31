@@ -1,0 +1,8 @@
+.lang-jp--sans {
+  font-family: var(--sans-JP);
+  font-weight: 400;
+}
+.lang-jp--serif {
+  font-family: var(--serif-JP);
+  font-weight: 500;
+}

@@ -1,0 +1,71 @@
+@use 'identity' as i;
+
+.sideBar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: calc(var(--space-xl) * 5);
+    &__title {
+        font-family: var(--sans-EN);
+        font-weight: 200;
+        color: var(--color1-90);
+        text-transform: capitalize;
+        @include i.landscape {
+            font-size: var(--step-3);
+            width: 10ch;
+        }
+        @include i.portrait {
+            font-size: var(--step-4);
+        }
+    }
+    &__selections {
+        gap: var(--space-xs);
+        display: flex;
+        @include i.landscape {
+            flex-direction: column;
+        }
+        @include i.portrait {
+            flex-direction: row;
+        }
+    }
+    @include i.landscape {
+        flex-direction: column;
+        padding: var(--space-l);
+        gap: var(--space-s);
+        border-inline-end: 0.1px solid var(--color1-40);
+        height: 100vh;
+    }
+    @include i.portrait {
+        position: sticky;
+        top: 0;
+        flex-direction: column;
+        padding-inline: var(--space-m);
+        padding-block: var(--space-xs);
+        gap: var(--space-s);
+        border-bottom: 1px solid var(--color1-40);
+        height: fit-content;
+    }
+}
+
+// dropdown menu
+// ==================================================
+
+.dropdown {
+    width: 10em;
+    border: none;
+    font-family: var(--sans-EN);
+    text-transform: capitalize;
+    outline: none;
+    color: var(--color1-80);
+    padding-block: var(--space-3xs);
+    padding-inline: var(--space-2xs);
+    cursor: pointer;
+    background: var(--color1-10);
+    position: relative;
+    &:hover {
+        background-color: var(--color1-90);
+        color: var(--color1-10);
+    }
+    &:active {
+    }
+}

@@ -1,0 +1,42 @@
+[
+    {
+        "slug": "/arabic",
+        "englishName": "arabic",
+        "localName": "العربية",
+        "call2action": false,
+        "abbreviation": "ar",
+        "componentName": "AlphabetAR"
+    },
+    {
+        "slug": "/hindi",
+        "englishName": "hindi",
+        "localName": "हिन्दी",
+        "call2action": false,
+        "abbreviation": "hi",
+        "componentName": "AlphabetHI"
+    },
+    {
+        "slug": "/japanese",
+        "englishName": "japanese",
+        "localName": "日本語",
+        "call2action": false,
+        "abbreviation": "jp",
+        "componentName": "AlphabetHI"
+    },
+    {
+        "slug": "/greek",
+        "englishName": "greek",
+        "localName": "Ελληνικά",
+        "call2action": false,
+        "abbreviation": "gr",
+        "componentName": "AlphabetGR"
+    },
+    {
+        "slug": "/russian",
+        "englishName": "russian",
+        "localName": "Русский",
+        "call2action": false,
+        "abbreviation": "ru",
+        "componentName": "AlphabetRU"
+    }
+]

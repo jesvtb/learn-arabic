@@ -248,8 +248,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type=single-letter__letterOrder]::-webkit-inner-spin-button,
-[type=single-letter__letterOrder]::-webkit-outer-spin-button {
+[type=single-symbol__symbolOrder]::-webkit-inner-spin-button,
+[type=single-symbol__symbolOrder]::-webkit-outer-spin-button {
   height: auto;
 }
 

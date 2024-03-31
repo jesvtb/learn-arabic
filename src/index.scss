@@ -1,2 +1,41 @@
 @use 'css/reset';
 @use 'css/test';
+@use 'css/nav';
+@use 'css/sidebar';
+@use 'css/symbol';
+@use 'css/symbols';
+@use 'css/lang-jp';
+@use 'css/lang-ar';
+@use 'css/lang-hi';
+@use 'css/lang-gr';
+@use 'css/identity' as i;
+
+#root {
+    @include i.landscape {
+        display: flex;
+        // gap: var(--space-xl);
+    }
+    @include i.portrait {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    // overflow-x: hidden;
+    overflow: hidden;
+    height: 100vh;
+}
+
+body {
+    overflow: hidden;
+    background: var(--color-001);
+    // overflow-y: hidden;
+    &:has(.sideBar) {
+        .homeNav {
+            display: none;
+        }
+    }
+}
+
+.base-lang {
+    font-family: var(--sans-EN);
+}

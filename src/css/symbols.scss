@@ -1,0 +1,43 @@
+@use 'identity' as i;
+
+.symbolsPanel {
+    overflow-y: auto;
+    height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    // height: fit-content;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    // align-items: start;
+    @include i.landscape {
+        row-gap: var(--space-xl);
+        padding-block: var(--space-l);
+        padding-inline: var(--space-2xl);
+        column-gap: var(--space-xl);
+    }
+    @include i.portrait {
+        padding-block: var(--space-l);
+        padding-inline: var(--space-m);
+        column-gap: var(--space-l);
+        row-gap: var(--space-l);
+    }
+}
+
+.symbolsPanel.lang-jp {
+    @include i.landscape {
+        display: column;
+        // row-gap: var(--space-m);
+    }
+    @include i.portrait {
+        // display: flex;
+        row-gap: var(--space-m);
+        // justify-content: space-around;
+    }
+    .phonetics {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+}
