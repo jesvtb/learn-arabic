@@ -7,6 +7,7 @@
 @use 'css/lang-jp';
 @use 'css/lang-ar';
 @use 'css/lang-hi';
+@use 'css/lang-ru';
 @use 'css/lang-gr';
 @use 'css/identity' as i;
 
@@ -28,9 +29,15 @@
 body {
     overflow: hidden;
     background: var(--color-001);
+    // background: rgb(238, 174, 202);
+    // background: linear-gradient(
+    //     90deg,
+    //     var(--color-001) 0%,
+    //     var(--color-100) 80%
+    // );
     // overflow-y: hidden;
     &:has(.sideBar) {
-        .homeNav {
+        .Homepage {
             display: none;
         }
     }

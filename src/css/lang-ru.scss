@@ -1,18 +1,18 @@
 @use 'identity' as i;
 
-.lang__gr {
+.lang__ru {
     font-weight: 200;
     &--serif {
-        font-family: var(--serif-GR);
+        font-family: var(--serif-RU);
         font-weight: 400;
     }
     &--sans {
-        font-family: var(--sans-GR);
+        font-family: var(--sans-RU);
         font-weight: 300;
     }
 }
 
-.lang__gr.symbolSingle__symbol {
+.lang__ru.symbolSingle__symbol {
     span:first-of-type {
         text-transform: capitalize;
     }
@@ -28,8 +28,8 @@
     }
 }
 
-@for $i from 1 through 24 {
-    .lang__gr .symbolSingle:nth-of-type(#{$i}) {
+@for $i from 1 through 31 {
+    .lang__ru .symbolSingle:nth-of-type(#{$i}) {
         .symbolSingle__symbol {
             $hue: $i * 60;
             color: hsl($hue, 50%, 50%) !important;

@@ -8,14 +8,15 @@ import {
     Title,
     getLangConfig,
     FetchSymbols,
+    ShowPhonetics,
 } from './component';
 
 export default function AlphabetAR() {
-    const [selectedFont, setSelectedFont] = useState('');
-    const [selectedForm, setSelectedForm] = useState('');
+    const [selectedFont, setSelectedFont] = useState('serif');
+    const [selectedForm, setSelectedForm] = useState('alone');
+    const [showIPA, setShowIPA] = useState(false);
     const langItems = useContext(LangItemsContext);
     const item = getLangConfig(langItems, 'arabic');
-    const lang = 'Arabic';
     const handleFontChange = (selectedValue) => {
         setSelectedFont(selectedValue);
     };
@@ -23,6 +24,11 @@ export default function AlphabetAR() {
     const handlePositionChange = (selectedValue) => {
         setSelectedForm(selectedValue);
     };
+    const handlePhoneticsChange = (newValue) => {
+        setShowIPA(newValue); // Update the local state.
+    };
+    // const langClass = item.acronym;
+    // console.log({item.acronym});
 
     return (
         <>
@@ -35,11 +41,16 @@ export default function AlphabetAR() {
                             <SelectPositionAR
                                 onSelectPositionAR={handlePositionChange}
                             />
+                            <ShowPhonetics
+                                onPhoneticsShown={handlePhoneticsChange}
+                            />
                         </div>
                     </div>
                     <MapsymbolsAR
                         selectedFont={selectedFont}
                         selectedForm={selectedForm}
+                        showIPA={showIPA}
+                        langClass={item.acronym}
                     />
                 </Route>
             )}
@@ -47,16 +58,17 @@ export default function AlphabetAR() {
     );
 }
 
-function MapsymbolsAR({ selectedFont, selectedForm }) {
+function MapsymbolsAR({ selectedFont, selectedForm, showIPA, langClass }) {
     const forms = ['initial', 'medial', 'final'];
     const symbols = FetchSymbols('./alphabet-AR.json');
+    console.log(langClass);
 
     return (
         <>
-            <div className="symbolsPanel lang-ar">
+            <div className={`symbolsPanel lang__${langClass}`}>
                 {symbols.map((symbol, i) => {
                     const formgroup = symbol.formgroup;
-                    const html = marked.parse(symbol.medialinword);
+                    // const html = marked.parse(symbol.medialinword);
 
                     return (
                         <div
@@ -69,19 +81,24 @@ function MapsymbolsAR({ selectedFont, selectedForm }) {
                                 // onClick={redirectToPage()}
                             >
                                 <h1
-                                    className={`symbolSingle__symbol lang-ar lang-ar--${selectedFont} ${selectedForm}`}
+                                    className={`symbolSingle__symbol lang__${langClass} lang__${langClass}--${selectedFont} lang__${langClass}--${selectedForm} lang__${langClass}--${formgroup}`}
                                 >
-                                    <span>ـ</span>
+                                    <span>&zwj;&zwj;</span>
                                     {symbol.alphabet}
-                                    <span>ـ</span>
+                                    <span>&zwj;&zwj;</span>
                                 </h1>
                                 <div className="symbolSingle__notationWrp">
+                                    {showIPA && ( // Render IPA if showIPA is true
+                                        <p className="symbolSingle__phonetics symbolSingle__phonetics--visible">
+                                            {symbol.ipa}
+                                        </p>
+                                    )}
                                     <p className="symbolSingle__symbolOrder">
                                         {symbol.id}
                                     </p>
                                 </div>
                             </Link>
-                            <div className="symbolSingle__tooltipWrp lang-ar">
+                            <div className={`symbolSingle__tooltipWrp`}>
                                 {forms.map((form, i) => (
                                     <div
                                         key={i}
@@ -91,7 +108,7 @@ function MapsymbolsAR({ selectedFont, selectedForm }) {
                                             {form}
                                         </h2>
                                         <h2
-                                            className={`symbolMorph__morphedForm ${form}`}
+                                            className={`symbolMorph__morphedForm lang__${langClass}--${selectedFont} lang__${langClass}--${form}`}
                                         >
                                             <span>ـ</span>
                                             {symbol.alphabet}

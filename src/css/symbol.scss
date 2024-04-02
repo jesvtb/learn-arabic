@@ -1,9 +1,15 @@
 @use 'identity' as i;
 
+// .symbolSingle:nth-of-type(15) {
+//     .symbolSingle__tooltipWrp {
+//         visibility: visible !important;
+//         // border: 2px solid red; // XXXX debug ⚠
+//     }
+// }
+
 .symbolSingle {
     display: inline-block;
     position: relative;
-    height: fit-content;
     a {
         text-decoration: none;
     }
@@ -11,13 +17,12 @@
         display: flex;
         visibility: hidden;
         z-index: 1;
-        // position: absolute;
-        // top: 100%;
-        // left: -50%;
-        background: var(--color1-10);
+        border-radius: 15px;
+        padding-block: var(--space-2xs);
+        background: var(--color1-80);
         @include i.landscape {
             position: absolute;
-            top: 100%;
+            // top: 100%;
         }
         @include i.portrait {
             position: fixed;
@@ -25,6 +30,7 @@
             left: 0;
         }
     }
+
     &:hover {
         .symbolSingle__tooltipWrp {
             visibility: visible;
@@ -43,14 +49,29 @@
         // border: 2px solid red; // XXXX debug ⚠
     }
     &__symbolOrder {
-        color: var(--color1-80);
+        color: var(--color1-40);
         font-size: var(--step-0);
         text-align: center;
         font-family: var(--number);
         margin-block: var(--space-xs);
     }
+    &__phonetics {
+        color: var(--color1-40);
+        font-size: var(--step-0);
+        text-align: center;
+        font-weight: 400;
+        font-style: normal;
+        font-family: var(--phonetics);
+        margin-block: var(--space-xs);
+        &:after,
+        &:before {
+            content: ' / ';
+            font-family: var(--number);
+            font-weight: 100;
+        }
+    }
     &__symbol {
-        color: grey;
+        // color: grey;
         margin-block: 0;
         position: relative;
         @include i.landscape {
@@ -62,7 +83,6 @@
         &::after {
             content: '';
             position: absolute;
-            @include i.motion-1;
             background: var(--color1-90);
             transform-origin: bottom left;
             height: 3px;
@@ -70,6 +90,7 @@
             left: -20%;
             bottom: -10%;
             border-radius: var(--space-3xs);
+            @include i.motion-1;
             transition-property: transform;
             @include i.crossBrowser(transform, scaleX(0));
         }

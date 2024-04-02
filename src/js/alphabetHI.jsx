@@ -4,7 +4,7 @@ import { LangItemsContext } from './app';
 import { SelectFont, Title, getLangConfig, FetchSymbols } from './component';
 
 export default function AlphabetHI() {
-    const [selectedFont, setSelectedFont] = useState('');
+    const [selectedFont, setSelectedFont] = useState('serif');
     const langItems = useContext(LangItemsContext);
     const item = getLangConfig(langItems, 'hindi');
     const handleFontChange = (selectedValue) => {
@@ -32,7 +32,7 @@ function MapsymbolsHI({ selectedFont }) {
 
     return (
         <>
-            <div className="symbolsPanel lang-hi">
+            <div className="symbolsPanel lang__hi">
                 {symbols.map((symbol, i) => {
                     const phoneticgroup = symbol.phoneticgroup;
                     return (
@@ -42,7 +42,7 @@ function MapsymbolsHI({ selectedFont }) {
                         >
                             <Link to={`/hindi/symbol/${symbol.id}`}>
                                 <h1
-                                    className={`symbolSingle__symbol lang-hi lang-hi--${selectedFont}`}
+                                    className={`symbolSingle__symbol lang__hi lang__hi--${selectedFont}`}
                                 >
                                     <span>{symbol.form}</span>
                                 </h1>

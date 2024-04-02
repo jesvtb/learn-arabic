@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300&family=Noto+Naskh+Arabic&family=Noto+Sans+Arabic:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Fira+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;500;700;900&family=Noto+Sans:wght@300;500&family=Noto+Serif+Devanagari:wght@300;500&family=Noto+Serif+SC:wght@300;500;700&family=Source+Serif+4:opsz,wght@8..60,200;8..60,300;8..60,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Voces&display=swap");
 :root {
   --sans-JP: "Noto Sans JP", sans-serif;
   --serif-JP: "Noto Serif JP", serif;
@@ -16,6 +17,7 @@
   --sans: "Roboto Condensed", sans-serif;
   --sans-EN: "Mukta", sans-serif;
   --number: "Gill Sans", "Gill Sans MT", calibri, "Trebuchet MS", sans-serif;
+  --phonetics: "Voces", sans-serif;
 }
 
 /* @link https://utopia.fyi/type/calculator?c=360,14,1.125,1366,16,1.414,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,NaN */
@@ -218,24 +220,120 @@ body[data-theme=light] {
   --shadow-2: 0.5px 0px 3px var(--color2-90);
 }
 
-.lang-gr {
+.lang__gr {
   font-weight: 200;
 }
-.lang-gr--serif {
+.lang__gr--serif {
   font-family: var(--serif-GR);
   font-weight: 400;
 }
-.lang-gr--sans {
+.lang__gr--sans {
   font-family: var(--sans-GR);
   font-weight: 300;
 }
 
-.lang-gr.symbolSingle__symbol span:first-of-type {
+.lang__gr.symbolSingle__symbol span:first-of-type {
   text-transform: capitalize;
 }
-.lang-gr.symbolSingle__symbol.lowercase span:first-of-type {
+.lang__gr.symbolSingle__symbol.lowercase span:first-of-type {
   display: none;
 }
-.lang-gr.symbolSingle__symbol.uppercase span:last-of-type {
+.lang__gr.symbolSingle__symbol.uppercase span:last-of-type {
   display: none;
+}
+
+.lang__gr .symbolSingle:nth-of-type(1) .symbolSingle__symbol {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(2) .symbolSingle__symbol {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(3) .symbolSingle__symbol {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(4) .symbolSingle__symbol {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(5) .symbolSingle__symbol {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(6) .symbolSingle__symbol {
+  color: hsl(0, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(7) .symbolSingle__symbol {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(8) .symbolSingle__symbol {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(9) .symbolSingle__symbol {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(10) .symbolSingle__symbol {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(11) .symbolSingle__symbol {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(12) .symbolSingle__symbol {
+  color: hsl(0, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(13) .symbolSingle__symbol {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(14) .symbolSingle__symbol {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(15) .symbolSingle__symbol {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(16) .symbolSingle__symbol {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(17) .symbolSingle__symbol {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(18) .symbolSingle__symbol {
+  color: hsl(0, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(19) .symbolSingle__symbol {
+  color: hsl(60, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(20) .symbolSingle__symbol {
+  color: hsl(120, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(21) .symbolSingle__symbol {
+  color: hsl(180, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(22) .symbolSingle__symbol {
+  color: hsl(240, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(23) .symbolSingle__symbol {
+  color: hsl(300, 50%, 50%) !important;
+}
+
+.lang__gr .symbolSingle:nth-of-type(24) .symbolSingle__symbol {
+  color: hsl(0, 50%, 50%) !important;
 }

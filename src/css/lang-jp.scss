@@ -1,6 +1,6 @@
 @use 'identity' as i;
 
-.lang-jp {
+.lang__jp {
     &--sans {
         font-family: var(--sans-JP);
         font-weight: 400;
@@ -20,6 +20,21 @@
     }
 }
 
-.lang-jp.symbolSingle__symbol {
+.lang__jp.symbolsPanel {
+    align-content: flex-start;
+}
+
+.lang__jp.symbolSingle__symbol {
     font-size: var(--step-3);
+}
+
+.lang__jp.katakana {
+    span:first-of-type {
+        display: none;
+    }
+}
+.lang__jp.hiragana {
+    span:last-of-type {
+        display: none;
+    }
 }

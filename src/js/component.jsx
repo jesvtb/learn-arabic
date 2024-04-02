@@ -59,6 +59,30 @@ export function MapSelections({ options, defaultOption }) {
     );
 }
 
+export function ShowPhonetics({ onPhoneticsShown }) {
+    const handlePhoneticsChange = (event) => {
+        if (typeof onPhoneticsShown === 'function') {
+            onPhoneticsShown(event.target.checked); // If a function was passed in, call it with new value.
+        }
+    };
+
+    return (
+        <div className="Checkbox__wrapper">
+            <span className="Checkbox__label">phonetics</span>
+            <input
+                id="toggle"
+                className="Checkbox__input"
+                type="checkbox"
+                onChange={handlePhoneticsChange} // Use the handler here
+            />
+            <label
+                htmlFor="toggle"
+                className="Checkbox__tip"
+            ></label>
+        </div>
+    );
+}
+
 export function SelectFont({ onSelectFont }) {
     const handleFontChange = (event) => {
         const selectedValue = event.target.value;
@@ -74,7 +98,7 @@ export function SelectFont({ onSelectFont }) {
             className="dropdown"
         >
             <MapSelections
-                defaultOption="serif"
+                defaultOption="font type"
                 options={options}
             />
         </select>
@@ -116,7 +140,7 @@ export function SelectPositionAR({ onSelectPositionAR }) {
             className="dropdown"
         >
             <MapSelections
-                defaultOption="form type"
+                defaultOption="alone"
                 options={options}
             />
         </select>
@@ -150,8 +174,14 @@ export function SelectSyllabary({ onSelectSyllabary }) {
 export function Title({ item }) {
     return (
         <>
-            <div className="sideBar__title">{item.localName}</div>
-            <div className="sideBar__title">{item.englishName}</div>
+            <div
+                className={`sideBar__Title ${
+                    item.acronym ? 'lang__' + item.acronym : ''
+                }`}
+            >
+                {item.localName}
+            </div>
+            <div className="sideBar__engTitle">{item.englishName}</div>
         </>
     );
 }

@@ -10,8 +10,8 @@ import {
 } from './component';
 
 export default function AlphabetJP() {
-    const [selectedFont, setSelectedFont] = useState('');
-    const [selectedSyllabary, setSelectedSyllabary] = useState('');
+    const [selectedFont, setSelectedFont] = useState('serif');
+    const [selectedSyllabary, setSelectedSyllabary] = useState('together');
     const langItems = useContext(LangItemsContext);
     const item = getLangConfig(langItems, 'japanese');
     const handleFontChange = (selectedValue) => {
@@ -57,7 +57,7 @@ function MapsymbolsJP({ selectedFont, selectedSyllabary }) {
 
     return (
         <>
-            <div className="symbolsPanel lang-jp">
+            <div className="symbolsPanel lang__jp">
                 {Object.entries(groupedsymbols).map(
                     ([phoneticGroup, symbols]) => (
                         <div
@@ -72,7 +72,7 @@ function MapsymbolsJP({ selectedFont, selectedSyllabary }) {
                                 >
                                     <Link to={`/japanese/symbol/${symbol.id}`}>
                                         <h1
-                                            className={`symbolSingle__symbol lang-jp lang-jp--${selectedFont} ${selectedSyllabary}`}
+                                            className={`symbolSingle__symbol lang__jp lang__jp--${selectedFont} ${selectedSyllabary}`}
                                         >
                                             <span>{symbol.hiragana}</span>
                                             <span>{symbol.katakana}</span>

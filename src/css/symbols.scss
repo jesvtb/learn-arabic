@@ -2,38 +2,34 @@
 
 .symbolsPanel {
     overflow-y: auto;
-    height: 100%;
     overflow-x: hidden;
     display: flex;
-    // height: fit-content;
-    width: fit-content;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    // align-items: start;
+    justify-content: center;
     @include i.landscape {
-        row-gap: var(--space-xl);
+        height: 100%;
+        align-content: space-evenly;
         padding-block: var(--space-l);
         padding-inline: var(--space-2xl);
         column-gap: var(--space-xl);
     }
     @include i.portrait {
+        align-content: flex-start;
+        height: 70vh !important;
         padding-block: var(--space-l);
+        margin-block-end: var(--space-3xl);
         padding-inline: var(--space-m);
-        column-gap: var(--space-l);
-        row-gap: var(--space-l);
+        column-gap: var(--space-m);
+        row-gap: var(--space-2xs);
     }
 }
 
-.symbolsPanel.lang-jp {
+.symbolsPanel.lang__jp {
     @include i.landscape {
         display: column;
-        // row-gap: var(--space-m);
     }
     @include i.portrait {
-        // display: flex;
         row-gap: var(--space-m);
-        // justify-content: space-around;
     }
     .phonetics {
         display: flex;

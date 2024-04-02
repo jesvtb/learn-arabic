@@ -2,48 +2,79 @@
 
 .sideBar {
     display: flex;
-    position: sticky;
-    top: 0;
-    width: calc(var(--space-xl) * 5);
-    &__title {
-        font-family: var(--sans-EN);
-        font-weight: 200;
-        color: var(--color1-90);
-        text-transform: capitalize;
-        @include i.landscape {
-            font-size: var(--step-3);
-            width: 10ch;
-        }
-        @include i.portrait {
-            font-size: var(--step-4);
-        }
-    }
-    &__selections {
-        gap: var(--space-xs);
-        display: flex;
-        @include i.landscape {
-            flex-direction: column;
-        }
-        @include i.portrait {
-            flex-direction: row;
-        }
-    }
     @include i.landscape {
         flex-direction: column;
-        padding: var(--space-l);
-        gap: var(--space-s);
-        border-inline-end: 0.1px solid var(--color1-40);
+        width: calc(var(--space-xl) * 5);
+        // padding: var(--space-l);
+        // padding-block-start: calc(var(--space-xl) * 4);
+        // padding-block: var(--space-3xl);
+        padding-inline: var(--space-l);
+        align-items: center;
+        justify-content: center;
+        // gap: var(--space-s);
+        border-inline-start: 0.1px solid var(--color1-40);
         height: 100vh;
+        order: 2;
+        // align-content: center;
     }
     @include i.portrait {
         position: sticky;
+        width: 100%;
         top: 0;
         flex-direction: column;
         padding-inline: var(--space-m);
         padding-block: var(--space-xs);
-        gap: var(--space-s);
+        gap: var(--space-3xs);
         border-bottom: 1px solid var(--color1-40);
         height: fit-content;
+    }
+
+    &__Title {
+        color: var(--color1-80);
+        // border: 2px solid blue; // XXXX debug ⚠
+
+        @include i.landscape {
+            text-align: center;
+            font-size: var(--step-4);
+            // width: 10ch;
+            width: calc(var(--space-xl) * 5);
+        }
+        @include i.portrait {
+            font-size: var(--step-6);
+        }
+    }
+    &__engTitle {
+        font-family: var(--sans-EN);
+        font-weight: 200;
+        color: var(--color1-80);
+        margin-block: 0;
+        // border: 2px solid red; // XXXX debug ⚠
+
+        text-transform: capitalize;
+        @include i.landscape {
+            text-align: center;
+            font-size: var(--step-1);
+            width: 10ch;
+            margin-block-end: var(--space-xl);
+        }
+        @include i.portrait {
+            font-size: var(--step-1);
+            margin-block-end: var(--space-xs);
+        }
+    }
+    &__selections {
+        display: flex;
+        @include i.landscape {
+            gap: var(--space-xs);
+            flex-direction: column;
+        }
+        @include i.portrait {
+            height: fit-content;
+            flex-direction: row;
+            gap: var(--space-xs);
+            // justify-content: space-between;
+            // align-content: flex-start;
+        }
     }
 }
 
@@ -51,7 +82,15 @@
 // ==================================================
 
 .dropdown {
-    width: 10em;
+    border-radius: 3px !important;
+    @include i.landscape {
+        width: 10em;
+    }
+    @include i.portrait {
+        // width: 5em;
+        height: fit-content;
+        align-self: flex-end;
+    }
     border: none;
     font-family: var(--sans-EN);
     text-transform: capitalize;
@@ -60,12 +99,82 @@
     padding-block: var(--space-3xs);
     padding-inline: var(--space-2xs);
     cursor: pointer;
-    background: var(--color1-10);
+    background: var(--color1-40);
     position: relative;
     &:hover {
-        background-color: var(--color1-90);
+        background-color: var(--color1-80);
         color: var(--color1-10);
     }
     &:active {
     }
+}
+
+.Checkbox {
+    &__input {
+        display: none;
+    }
+    &__label {
+        font-family: var(--sans-EN);
+        text-transform: capitalize;
+        // z-index: 100;
+        color: var(--color1-80);
+        // border: 2px solid red; // XXXX debug ⚠
+        // text-align: center;
+        // color: red;
+    }
+    &__wrapper {
+        display: flex;
+        @include i.landscape {
+            padding-block: var(--space-xs);
+            padding-inline: var(--space-xs);
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include i.portrait {
+            flex-direction: column;
+            gap: var(--space-3xs);
+            // height: fit-content;
+        }
+    }
+    &__tip {
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+        background-color: var(--color1-40);
+        // opacity: 0.6;
+        border-radius: 12px;
+        position: relative;
+        cursor: pointer;
+        // margin-left: 32px;
+        // &:hover::before {
+        //     background-color: var(--color1-80);
+        // }
+    }
+
+    &__tip::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: var(--color1-80);
+
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+
+    &__input:checked + label {
+        background-color: var(--color1-90);
+    }
+
+    &__input:checked + label::before {
+        transform: translateX(30px);
+        background-color: var(--color1-10);
+    }
+
+    // input {
+    //     width: 10px;
+    //     border: 2px solid red; // XXXX debug ⚠
+    // }
 }

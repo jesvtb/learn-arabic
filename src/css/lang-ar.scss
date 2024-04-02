@@ -1,9 +1,19 @@
 @use 'identity' as i;
 
-.lang-ar {
+.sideBar__Title.lang__ar {
+    @include i.portrait {
+        direction: unset !important;
+    }
+}
+
+.lang__ar {
+    font-feature-settings: 'liga', 'clig', 'calt', 'case';
+    -webkit-font-feature-settings: 'liga', 'clig', 'calt', 'case';
+    -moz-font-feature-settings: 'liga', 'clig', 'calt', 'case';
+    -ms-font-feature-settings: 'liga', 'clig', 'calt', 'case';
+
     font-weight: 300;
     direction: rtl;
-    // writing-mode: sideways-rl;
     &--sans {
         font-family: var(--sans-AR) !important;
         font-weight: 400;
@@ -11,55 +21,58 @@
     &--serif {
         font-family: var(--serif-AR) !important;
     }
-}
+    &--alone {
+        span {
+            display: none;
+        }
+    }
+    &--initial {
+        span:nth-of-type(1) {
+            display: none;
+        }
+    }
 
-@for $i from 1 through 9 {
-    .fg-#{$i} {
-        h1 {
+    &--final {
+        span:nth-of-type(2) {
+            display: none;
+        }
+    }
+    &--fg-0 {
+        color: grey;
+    }
+    @for $i from 1 through 9 {
+        &--fg-#{$i} {
             $hue: $i * 80;
             color: hsl($hue, 50%, 50%);
         }
     }
 }
 
-.alone {
-    span {
-        display: none;
-    }
-}
-
-.initial {
-    span:nth-of-type(1) {
-        display: none;
-    }
-}
-
-.final {
-    span:nth-of-type(2) {
-        display: none;
-    }
-}
-
 .symbolMorph {
     &__wrapper {
-        padding: 0 var(--space-3xs);
-        width: 80px;
+        width: 70px;
+        display: flex;
+        flex-direction: column;
+        padding-inline: var(--space-3xs);
+        padding-block: var(--space-3xs);
+        row-gap: var(--space-3xs);
     }
     &__wrapper:not(:first-of-type) {
-        border-right: 1px solid var(--color-100-opaque);
+        border-right: 0.1px solid var(--color1-40);
     }
     &__morphType {
-        color: var(--color2-80);
+        color: var(--color1-40);
         font-size: var(--step-0);
         font-family: var(--sans-EN);
         text-align: center;
+        margin-block: 0;
     }
     &__morphedForm {
-        // margin-block: var(--space-m);
         text-align: center;
-        color: var(--color2-40);
-        font-size: var(--step-4);
+        color: var(--color1-10);
+        font-size: var(--step-3);
         font-weight: 200;
-        line-height: 1rem;
+        margin-block: 0;
+        line-height: 1em;
     }
 }

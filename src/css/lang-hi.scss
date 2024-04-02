@@ -1,4 +1,4 @@
-.lang-hi {
+.lang__hi {
     font-weight: 200;
     &--sans {
         font-family: var(--sans-HI) !important;
@@ -10,7 +10,7 @@
     }
 }
 
-.lang-hi.symbolSingle__symbol {
+.lang__hi.symbolSingle__symbol {
     span {
         font-size: var(--step-3);
     }
