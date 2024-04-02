@@ -134,6 +134,15 @@ export function ToggleTheme() {
     );
 }
 
+export function Credits() {
+    return (
+        <div className="Credits">
+            <p className="Credits__key">design & development</p>
+            <p className="Credits__value">jessica luo</p>
+        </div>
+    );
+}
+
 export function ToggleNav() {
     const [isToggled, setIsToggled] = useState(false);
     const langItems = useContext(LangItemsContext);

@@ -4,7 +4,7 @@ import AlphabetRU from './alphabetRU';
 import AlphabetAR from './alphabetAR';
 import AlphabetJP from './alphabetJP';
 import AlphabetGR from './alphabetGR';
-import { Homepage, ToggleNav } from './nav';
+import { Homepage, ToggleNav, Credits } from './nav';
 import axios from 'axios';
 
 // init Context object to optinally give access to child components
@@ -33,7 +33,7 @@ export default function App() {
         <>
             <LangItemsContext.Provider value={langItems}>
                 <Homepage />
-
+                <Credits />
                 <ToggleNav />
                 <AlphabetGR />
                 <AlphabetRU />

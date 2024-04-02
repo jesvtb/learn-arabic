@@ -116,7 +116,7 @@ body[data-theme=light] {
   --color3-80: #ecadb9;
   --color3-10: hsl(7, 62%, 26%);
   --color3-80-opaque: hsla(8, 100%, 21%, 20%);
-  --color-001: rgba(255, 255, 255);
+  --color-001: rgb(238, 238, 238);
   --color-001-opaque: rgba(255, 255, 255, 0%);
   --color-100: rgb(24, 24, 34);
   --color-100-opaque: hsla(0, 0%, 0%, 30%);
@@ -403,7 +403,6 @@ body[data-theme=light] {
 }
 
 .toggleNav {
-  padding-inline: var(--space-l);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -411,13 +410,23 @@ body[data-theme=light] {
   gap: var(--space-s);
   background: var(--color1-80);
   height: 100%;
-  width: calc(var(--space-xl) * 5);
   position: fixed;
   right: -100%;
   z-index: 1;
   transition-property: right;
   transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9);
   transition-duration: 450ms;
+}
+@media only screen and (orientation: landscape) {
+  .toggleNav {
+    padding-inline: var(--space-l);
+    width: calc(var(--space-xl) * 5);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .toggleNav {
+    width: 100%;
+  }
 }
 .toggleNav--open {
   right: 0%;
@@ -438,5 +447,35 @@ body[data-theme=light] {
 @media only screen and (orientation: portrait) {
   .toggleNav__link {
     font-size: var(--step-6);
+  }
+}
+
+.Credits {
+  display: flex;
+  position: fixed;
+  bottom: var(--space-2xs);
+}
+.Credits p {
+  font-family: var(--sans-EN);
+  font-size: var(--step-0);
+  text-transform: capitalize;
+}
+.Credits__key {
+  color: var(--color1-40);
+}
+.Credits__value {
+  color: var(--color1-80);
+  font-weight: 600;
+}
+@media only screen and (orientation: landscape) {
+  .Credits {
+    padding-inline: var(--space-xl);
+    gap: var(--space-2xs);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .Credits {
+    padding-inline: var(--space-m);
+    gap: var(--space-2xs);
   }
 }

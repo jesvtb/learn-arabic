@@ -182,6 +182,7 @@
     $width: 70px;
     width: $width;
     height: $width;
+
     // height: 100%;
     background: none;
     border: none;
@@ -196,7 +197,6 @@
 
 .toggleNav {
     // padding: var(--space-l);
-    padding-inline: var(--space-l);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,7 +204,13 @@
     gap: var(--space-s);
     background: var(--color1-80);
     height: 100%;
-    width: calc(var(--space-xl) * 5); // inline-size: 200px;
+    @include i.landscape {
+        padding-inline: var(--space-l);
+        width: calc(var(--space-xl) * 5);
+    }
+    @include i.portrait {
+        width: 100%;
+    }
     @include i.navSlide;
     &__link {
         text-decoration: none;
@@ -219,5 +225,31 @@
         @include i.portrait {
             font-size: var(--step-6);
         }
+    }
+}
+
+.Credits {
+    display: flex;
+    position: fixed;
+    bottom: var(--space-2xs);
+    p {
+        font-family: var(--sans-EN);
+        font-size: var(--step-0);
+        text-transform: capitalize;
+    }
+    &__key {
+        color: var(--color1-40);
+    }
+    &__value {
+        color: var(--color1-80);
+        font-weight: 600;
+    }
+    @include i.landscape {
+        padding-inline: var(--space-xl);
+        gap: var(--space-2xs);
+    }
+    @include i.portrait {
+        padding-inline: var(--space-m);
+        gap: var(--space-2xs);
     }
 }

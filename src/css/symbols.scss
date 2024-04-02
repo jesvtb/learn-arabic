@@ -9,7 +9,6 @@
     @include i.landscape {
         height: 100%;
         align-content: space-evenly;
-        padding-block: var(--space-l);
         padding-inline: var(--space-2xl);
         column-gap: var(--space-xl);
     }
