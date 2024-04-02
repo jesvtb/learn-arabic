@@ -2,156 +2,187 @@
     {
         "id": 1,
         "alphabet": "а",
-        "latin": "a"
+        "latin": "a",
+        "ipa": "a"
     },
     {
         "id": 2,
         "alphabet": "б",
-        "latin": "b"
+        "latin": "b",
+        "ipa": "b"
     },
     {
         "id": 3,
         "alphabet": "в",
-        "latin": "v"
+        "latin": "v",
+        "ipa": "v"
     },
     {
         "id": 4,
         "alphabet": "г",
-        "latin": "g"
+        "latin": "g",
+        "ipa": "g"
     },
     {
         "id": 5,
         "alphabet": "д",
-        "latin": "d"
+        "latin": "d",
+        "ipa": "d"
     },
     {
         "id": 6,
         "alphabet": "е",
-        "latin": "e"
+        "latin": "e",
+        "ipa": "ʲe"
     },
     {
         "id": 7,
         "alphabet": "ж",
-        "latin": "zh"
+        "latin": "zh",
+        "ipa": "ʐ"
     },
     {
         "id": 8,
         "alphabet": "з",
-        "latin": "z"
+        "latin": "z",
+        "ipa": "z"
     },
     {
         "id": 9,
         "alphabet": "и",
-        "latin": "i"
+        "latin": "i",
+        "ipa": "i"
     },
     {
         "id": 10,
         "alphabet": "й",
-        "latin": "j"
+        "latin": "j",
+        "ipa": "j"
     },
     {
         "id": 11,
         "alphabet": "к",
-        "latin": "k"
+        "latin": "k",
+        "ipa": "k"
     },
     {
         "id": 12,
         "alphabet": "л",
-        "latin": "l"
+        "latin": "l",
+        "ipa": "l"
     },
     {
         "id": 13,
         "alphabet": "м",
-        "latin": "m"
+        "latin": "m",
+        "ipa": "m"
     },
     {
         "id": 14,
         "alphabet": "н",
-        "latin": "n"
+        "latin": "n",
+        "ipa": "n"
     },
     {
         "id": 15,
         "alphabet": "о",
-        "latin": "o"
+        "latin": "o",
+        "ipa": "o"
     },
     {
         "id": 16,
         "alphabet": "п",
-        "latin": "p"
+        "latin": "p",
+        "ipa": "p"
     },
     {
         "id": 17,
         "alphabet": "р",
-        "latin": "r"
+        "latin": "r",
+        "ipa": "r"
     },
     {
         "id": 18,
         "alphabet": "с",
-        "latin": "s"
+        "latin": "s",
+        "ipa": "s"
     },
     {
         "id": 19,
         "alphabet": "т",
-        "latin": "t"
+        "latin": "t",
+        "ipa": "t"
     },
     {
         "id": 20,
         "alphabet": "у",
-        "latin": "u"
+        "latin": "u",
+        "ipa": "u"
     },
     {
         "id": 21,
         "alphabet": "ф",
-        "latin": "f"
+        "latin": "f",
+        "ipa": "f"
     },
     {
         "id": 22,
         "alphabet": "х",
-        "latin": "h"
+        "latin": "h",
+        "ipa": "x"
     },
     {
         "id": 23,
         "alphabet": "ц",
-        "latin": "ts"
+        "latin": "ts",
+        "ipa": "ʦ"
     },
     {
         "id": 24,
         "alphabet": "ч",
-        "latin": "ch"
+        "latin": "ch",
+        "ipa": "ʧ"
     },
     {
         "id": 25,
         "alphabet": "ш",
-        "latin": "sh"
+        "latin": "sh",
+        "ipa": "ʃ"
     },
     {
         "id": 26,
         "alphabet": "щ",
-        "latin": "shch"
+        "latin": "shch",
+        "ipa": "ɕ"
     },
     {
         "id": 27,
         "alphabet": "ъ",
-        "latin": "'"
+        "latin": "'",
+        "ipa": "ə"
     },
     {
         "id": 28,
         "alphabet": "ы",
-        "latin": "y"
+        "latin": "y",
+        "ipa": "ɨ"
     },
     {
         "id": 29,
         "alphabet": "ь",
-        "latin": "'"
+        "latin": "'",
+        "ipa": "ʲ"
     },
     {
         "id": 30,
         "alphabet": "ю",
-        "latin": "yu"
+        "latin": "yu",
+        "ipa": "ju"
     },
     {
         "id": 31,
         "alphabet": "я",
-        "latin": "ya"
+        "latin": "ya",
+        "ipa": "ja"
     }
 ]

@@ -3,280 +3,168 @@
         "id": "1",
         "alphabet": "ا",
         "formgroup": "fg-0",
-        "latinName": "alif",
-        "pronounciation": "a:",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "aː"
     },
     {
         "id": "2",
         "alphabet": "ب",
         "formgroup": "fg-1",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "b"
     },
     {
         "id": "3",
         "alphabet": "ت",
         "formgroup": "fg-1",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "t"
     },
     {
         "id": "4",
         "alphabet": "ث",
         "formgroup": "fg-1",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "θ"
     },
     {
         "id": "5",
         "alphabet": "ج",
         "formgroup": "fg-2",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "dʒ"
     },
     {
         "id": "6",
         "alphabet": "ح",
         "formgroup": "fg-2",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "ħ"
     },
     {
         "id": "7",
         "alphabet": "خ",
         "formgroup": "fg-2",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "x"
     },
     {
         "id": "8",
         "alphabet": "د",
         "formgroup": "fg-3",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "d"
     },
     {
         "id": "9",
         "alphabet": "ذ",
         "formgroup": "fg-3",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "ð"
     },
     {
         "id": "10",
         "alphabet": "ر",
         "formgroup": "fg-4",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "r"
     },
     {
         "id": "11",
         "alphabet": "ز",
         "formgroup": "fg-4",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "z"
     },
     {
         "id": "12",
         "alphabet": "س",
         "formgroup": "fg-5",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "s"
     },
     {
         "id": "13",
         "alphabet": "ش",
         "formgroup": "fg-5",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "ʃ"
     },
     {
         "id": "14",
         "alphabet": "ص",
         "formgroup": "fg-6",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "sˤ"
     },
     {
         "id": "15",
         "alphabet": "ض",
         "formgroup": "fg-6",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "dˤ"
     },
     {
         "id": "16",
         "alphabet": "ط",
         "formgroup": "fg-7",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "سل*ط*نه",
-        "finalinword": ""
+        "ipa": "tˤ"
     },
     {
         "id": "17",
         "alphabet": "ظ",
         "formgroup": "fg-7",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "ðˤ"
     },
     {
         "id": "18",
         "alphabet": "ع",
         "formgroup": "fg-8",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "ʕ"
     },
     {
         "id": "19",
         "alphabet": "غ",
         "formgroup": "fg-8",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "ɣ"
     },
     {
         "id": "20",
         "alphabet": "ف",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "f"
     },
     {
         "id": "21",
         "alphabet": "ق",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "q"
     },
     {
         "id": "22",
         "alphabet": "ك",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "k"
     },
     {
         "id": "23",
         "alphabet": "ل",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "l"
     },
     {
         "id": "24",
         "alphabet": "م",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "m"
     },
     {
         "id": "25",
         "alphabet": "ن",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "n"
     },
     {
         "id": "26",
         "alphabet": "ه",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "h"
     },
     {
         "id": "27",
         "alphabet": "و",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "w"
     },
     {
         "id": "28",
         "alphabet": "ي",
         "formgroup": "fg-0",
-        "latinName": "",
-        "pronounciation": "",
-        "initialinword": "",
-        "medialinword": "",
-        "finalinword": ""
+        "ipa": "j"
     }
 ]
