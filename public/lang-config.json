@@ -4,7 +4,7 @@
         "englishName": "arabic",
         "localName": "العربية",
         "call2action": false,
-        "abbreviation": "ar",
+        "acronym": "ar",
         "componentName": "AlphabetAR"
     },
     {
@@ -12,7 +12,7 @@
         "englishName": "hindi",
         "localName": "हिन्दी",
         "call2action": false,
-        "abbreviation": "hi",
+        "acronym": "hi",
         "componentName": "AlphabetHI"
     },
     {
@@ -20,7 +20,7 @@
         "englishName": "japanese",
         "localName": "日本語",
         "call2action": false,
-        "abbreviation": "jp",
+        "acronym": "jp",
         "componentName": "AlphabetHI"
     },
     {
@@ -28,7 +28,7 @@
         "englishName": "greek",
         "localName": "Ελληνικά",
         "call2action": false,
-        "abbreviation": "gr",
+        "acronym": "gr",
         "componentName": "AlphabetGR"
     },
     {
@@ -36,7 +36,7 @@
         "englishName": "russian",
         "localName": "Русский",
         "call2action": false,
-        "abbreviation": "ru",
+        "acronym": "ru",
         "componentName": "AlphabetRU"
     }
 ]
