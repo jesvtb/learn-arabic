@@ -1,25 +1,50 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext, useRef } from 'react';
 import { Route, Link } from 'wouter';
 import { LangItemsContext } from './app';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import SplitType from 'split-type';
+import { titleCase } from 'title-case';
+
+gsap.registerPlugin(useGSAP);
 
 export function Homepage() {
     const langItems = useContext(LangItemsContext);
+    const taglineRef = useRef();
+    useEffect(() => {
+        if (taglineRef.current) {
+            const originalText = taglineRef.current.textContent;
+            const transformedText = titleCase(originalText);
+            console.log(transformedText);
+            taglineRef.current.textContent = transformedText;
+            gsap.set(taglineRef.current, { visibility: 'visible' });
+            const text = new SplitType(taglineRef.current, {
+                types: 'words',
+                wordClass: 'Homepage__taglineWord',
+            });
+            console.log(text);
+            gsap.from(text.words, {
+                yPercent: 50,
+                opacity: 0,
+                stagger: {
+                    from: 'left',
+                    each: 0.1,
+                },
+                duration: 2,
+                ease: 'expo.out',
+            });
+        }
+    }, [taglineRef]);
     return (
         <Route path="/">
             <div className="Homepage">
-                <h2 className="Homepage__tagLine">
-                    <span>
-                        A <strong>symbol</strong> is a window
-                    </span>
-                    <br />
-                    <span>through which </span>
-                    <br />
-                    <span>
-                        one
-                        <strong> sees into the infinite</strong>.
-                    </span>
-                </h2>
-                <hr className="Homepage__divider" />
+                <h1
+                    className="Homepage__tagline"
+                    ref={taglineRef}
+                >
+                    a symbol is a window through which one sees into the
+                    infinite.
+                </h1>
                 <div className="Homepage__linksWrapper">
                     {langItems?.map(
                         ({ slug, localName, acronym, englishName }, i) => (
