@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;500;700;900&family=Noto+Sans:wght@300;500&family=Noto+Serif+Devanagari:wght@300;500&family=Noto+Serif+SC:wght@300;500;700&family=Source+Serif+4:opsz,wght@8..60,200;8..60,300;8..60,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Voces&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 :root {
   --sans-JP: "Noto Sans JP", sans-serif;
   --serif-JP: "Noto Serif JP", serif;
@@ -16,7 +17,7 @@
   --serif-AR: "Noto Naskh Arabic", serif;
   --sans-AR: "Noto Sans Arabic", sans-serif;
   --sans-EN: "Mukta", sans-serif;
-  --serif-EN: "Noto Serif", serif;
+  --serif-EN: "Marcellus", serif;
   --display: "Playfair Display", serif;
   --serif: "Noto Naskh Arabic", serif;
   --sans: "Roboto Condensed", sans-serif;
@@ -226,66 +227,48 @@ body[data-theme=light] {
 
 .Homepage {
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 @media only screen and (orientation: landscape) {
   .Homepage {
-    padding-inline: var(--space-3xl);
-    row-gap: var(--space-3xl);
+    flex-direction: row;
+    -moz-column-gap: var(--space-3xl);
+         column-gap: var(--space-3xl);
   }
 }
 @media only screen and (orientation: portrait) {
   .Homepage {
-    row-gap: var(--space-3xl);
+    flex-direction: column;
+    row-gap: var(--space-m);
   }
 }
-.Homepage__tagLine {
-  font-family: var(--sans-EN);
-  color: var(--color1-40);
-  text-transform: capitalize;
+.Homepage__tagline {
+  font-kerning: none;
+  width: 25ch;
 }
-.Homepage__tagLine span:nth-of-type(1) {
+.Homepage__taglineWord {
+  font-kerning: none;
+  font-family: var(--serif-EN) !important;
+  font-weight: 400;
+  color: var(--color1-40) !important;
   font-size: var(--step-3);
-}
-.Homepage__tagLine span:nth-of-type(2) {
-  font-size: var(--step-1);
-}
-@media only screen and (orientation: landscape) {
-  .Homepage__tagLine span:nth-of-type(2) {
-    margin-left: 280px;
-  }
-}
-.Homepage__tagLine span:nth-of-type(3) {
-  font-size: var(--step-3);
-}
-@media only screen and (orientation: landscape) {
-  .Homepage__tagLine span:nth-of-type(3) {
-    margin-left: 280px;
-  }
-}
-.Homepage__tagLine strong {
-  color: var(--color1-80);
 }
 .Homepage__linksWrapper {
   display: flex;
+  flex-direction: column;
 }
 @media only screen and (orientation: landscape) {
   .Homepage__linksWrapper {
     gap: var(--space-l);
-    flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
   }
 }
 @media only screen and (orientation: portrait) {
   .Homepage__linksWrapper {
-    flex-direction: column;
-    justify-content: center;
-    row-gap: var(--space-l);
+    row-gap: var(--space-m);
   }
 }
 .Homepage__divider {
@@ -295,23 +278,30 @@ body[data-theme=light] {
 }
 .Homepage__link {
   text-decoration: none;
-  color: var(--color1-40);
+  color: var(--color1-80);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .Homepage__link:hover {
-  color: var(--color1-80);
+  color: var(--color1-90);
 }
 .Homepage__localName {
-  font-size: var(--step-3);
-  margin: 0 0 var(--space-xs);
+  margin-block: var(--space-3xs);
+}
+@media only screen and (orientation: landscape) {
+  .Homepage__localName {
+    font-size: var(--step-3);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .Homepage__localName {
+    font-size: var(--step-6);
+  }
 }
 .Homepage__localName--ar {
   font-family: var(--serif-AR);
   font-weight: 400;
-  direction: rtl;
 }
 .Homepage__localName--gr {
   font-family: var(--serif-GR);
@@ -320,7 +310,6 @@ body[data-theme=light] {
 .Homepage__localName--jp {
   font-family: var(--serif-JP);
   font-weight: 500;
-  scale: 0.8;
 }
 .Homepage__englishName {
   margin: 0;
@@ -351,8 +340,8 @@ body[data-theme=light] {
   }
 }
 .navToggle__icon {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 .navToggle__icon path {
   stroke: var(--color1-80);
@@ -389,8 +378,8 @@ body[data-theme=light] {
 }
 
 .themeToggle {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background: none;
   border: none;
   cursor: pointer;
@@ -406,7 +395,6 @@ body[data-theme=light] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: var(--space-s);
   background: var(--color1-80);
   height: 100%;

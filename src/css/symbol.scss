@@ -38,9 +38,6 @@
         .symbolSingle__symbol {
             cursor: pointer;
             color: var(--color1-90);
-            // &::after {
-            //     @include i.crossBrowser(transform, scaleX(1));
-            // }
         }
     }
     &__notationWrp {
@@ -63,6 +60,17 @@
         font-style: normal;
         font-family: var(--phonetics);
         margin-block: var(--space-xs);
+        animation-name: move;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        @keyframes move {
+            from {
+                transform: translateY(50%);
+            }
+            to {
+                transform: translateY(0%);
+            }
+        }
         &:after,
         &:before {
             content: ' / ';

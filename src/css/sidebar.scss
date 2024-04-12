@@ -4,18 +4,14 @@
     display: flex;
     @include i.landscape {
         flex-direction: column;
-        width: calc(var(--space-xl) * 5);
-        // padding: var(--space-l);
-        // padding-block-start: calc(var(--space-xl) * 4);
-        // padding-block: var(--space-3xl);
-        padding-inline: var(--space-l);
+        width: 20vw;
+        padding-inline: var(--space-m);
         align-items: center;
         justify-content: center;
         // gap: var(--space-s);
         border-inline-start: 0.1px solid var(--color1-40);
         height: 100vh;
         order: 2;
-        // align-content: center;
     }
     @include i.portrait {
         position: sticky;
@@ -31,13 +27,9 @@
 
     &__Title {
         color: var(--color1-80);
-        // border: 2px solid blue; // XXXX debug ⚠
-
         @include i.landscape {
             text-align: center;
             font-size: var(--step-4);
-            // width: 10ch;
-            width: calc(var(--space-xl) * 5);
         }
         @include i.portrait {
             font-size: var(--step-6);
@@ -48,8 +40,6 @@
         font-weight: 200;
         color: var(--color1-80);
         margin-block: 0;
-        // border: 2px solid red; // XXXX debug ⚠
-
         text-transform: capitalize;
         @include i.landscape {
             text-align: center;
@@ -72,8 +62,6 @@
             height: fit-content;
             flex-direction: row;
             gap: var(--space-xs);
-            // justify-content: space-between;
-            // align-content: flex-start;
         }
     }
 }
@@ -87,7 +75,6 @@
         width: 10em;
     }
     @include i.portrait {
-        // width: 5em;
         height: fit-content;
         align-self: flex-end;
     }
@@ -116,11 +103,7 @@
     &__label {
         font-family: var(--sans-EN);
         text-transform: capitalize;
-        // z-index: 100;
         color: var(--color1-80);
-        // border: 2px solid red; // XXXX debug ⚠
-        // text-align: center;
-        // color: red;
     }
     &__wrapper {
         display: flex;
@@ -145,10 +128,6 @@
         border-radius: 12px;
         position: relative;
         cursor: pointer;
-        // margin-left: 32px;
-        // &:hover::before {
-        //     background-color: var(--color1-80);
-        // }
     }
 
     &__tip::before {
@@ -172,9 +151,4 @@
         transform: translateX(30px);
         background-color: var(--color1-10);
     }
-
-    // input {
-    //     width: 10px;
-    //     border: 2px solid red; // XXXX debug ⚠
-    // }
 }

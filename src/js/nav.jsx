@@ -31,7 +31,7 @@ export function Homepage() {
                     each: 0.1,
                 },
                 duration: 2,
-                ease: 'expo.out',
+                ease: 'back-out',
             });
         }
     }, [taglineRef]);
@@ -71,7 +71,7 @@ export function Homepage() {
 }
 
 export function ToggleTheme() {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
         document.body.setAttribute('data-theme', theme);
@@ -90,19 +90,12 @@ export function ToggleTheme() {
             className="themeToggle"
         >
             <svg
-                // xmlns="http://www.w3.org/2000/svg"
-                // xmlns:xlink="http://www.w3.org/1999/xlink"
-                // xmlns:serif="http://www.serif.com/"
                 viewBox="0 0 64 64"
                 version="1.1"
-                // xml:space="preserve"
-                // style=""
-                // x="0px"
-                // y="0px"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                stroke-linejoin="round"
-                stroke-miterlimit="2"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                strokeLinejoin="round"
+                strokeMiterlimit="2"
                 className={
                     theme === 'light'
                         ? 'themeToggle__light'
@@ -204,6 +197,7 @@ export function ToggleNav() {
                 // style={{ display: isToggled ? '' : 'none' }}
             >
                 <ToggleTheme />
+                {/* <Link to="/roots">roots</Link> */}
                 {langItems.map((item, i) => (
                     <Link
                         to={item.slug}

@@ -1,6 +1,5 @@
-import { useState, useContext } from 'react';
-import { marked } from 'marked';
 import { Route, Link } from 'wouter';
+import { useState, useContext } from 'react';
 import { LangItemsContext } from './app';
 import {
     SelectFont,
