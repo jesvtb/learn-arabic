@@ -197,7 +197,7 @@ export function ToggleNav() {
                 // style={{ display: isToggled ? '' : 'none' }}
             >
                 <ToggleTheme />
-                {/* <Link to="/roots">roots</Link> */}
+                <Link to="/roots">roots</Link>
                 {langItems.map((item, i) => (
                     <Link
                         to={item.slug}

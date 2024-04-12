@@ -1,0 +1,56 @@
+@use 'identity' as i;
+
+.RootCard {
+    &__wrapper {
+        // width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 80vw;
+        padding-inline-start: var(--space-xl);
+        // border: 2px solid red; // XXXX debug ⚠
+    }
+    &__main {
+        font-size: var(--step-4);
+        font-family: var(--serif-EN);
+        &--sans {
+            font-family: var(--sans-EN);
+        }
+    }
+    &__card {
+        // width: max-content;
+        // width: 400px;
+        width: calc(80vw / 3);
+        padding-inline: var(--space-l);
+        color: var(--color1-10);
+        @for $i from 1 through 3 {
+            &:nth-of-type(#{$i}) {
+                $hue: $i * 120 + 40;
+                color: hsl($hue, 50%, 50%);
+                em:before {
+                    // $hue: $i * 120;
+                    background: hsl($hue, 50%, 50%);
+                }
+            }
+        }
+    }
+    &__example {
+        // color: var(--color1-10);
+        font-size: var(--step-2);
+        font-weight: 400;
+        em {
+            font-style: normal;
+            // text-decoration: underline;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                background: white;
+                height: 3px;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import AlphabetAR from './alphabetAR';
 import AlphabetJP from './alphabetJP';
 import AlphabetGR from './alphabetGR';
 import { Homepage, ToggleNav, Credits } from './nav';
+import RootsEuropean from './rootsEuropean';
 import axios from 'axios';
 
 // init Context object to optinally give access to child components
@@ -35,6 +36,7 @@ export default function App() {
                 <Homepage />
                 <Credits />
                 <ToggleNav />
+                <RootsEuropean />
                 <AlphabetGR />
                 <AlphabetRU />
                 <AlphabetHI />

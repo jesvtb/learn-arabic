@@ -538,66 +538,47 @@ body[data-theme=light] {
 
 .Homepage {
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 @media only screen and (orientation: landscape) {
   .Homepage {
-    padding-inline: var(--space-3xl);
-    row-gap: var(--space-3xl);
+    flex-direction: row;
+    column-gap: var(--space-3xl);
   }
 }
 @media only screen and (orientation: portrait) {
   .Homepage {
-    row-gap: var(--space-3xl);
+    flex-direction: column;
+    row-gap: var(--space-m);
   }
 }
-.Homepage__tagLine {
-  font-family: var(--sans-EN);
-  color: var(--color1-40);
-  text-transform: capitalize;
+.Homepage__tagline {
+  font-kerning: none;
+  width: 25ch;
 }
-.Homepage__tagLine span:nth-of-type(1) {
+.Homepage__taglineWord {
+  font-kerning: none;
+  font-family: var(--serif-EN) !important;
+  font-weight: 400;
+  color: var(--color1-40) !important;
   font-size: var(--step-3);
-}
-.Homepage__tagLine span:nth-of-type(2) {
-  font-size: var(--step-1);
-}
-@media only screen and (orientation: landscape) {
-  .Homepage__tagLine span:nth-of-type(2) {
-    margin-left: 280px;
-  }
-}
-.Homepage__tagLine span:nth-of-type(3) {
-  font-size: var(--step-3);
-}
-@media only screen and (orientation: landscape) {
-  .Homepage__tagLine span:nth-of-type(3) {
-    margin-left: 280px;
-  }
-}
-.Homepage__tagLine strong {
-  color: var(--color1-80);
 }
 .Homepage__linksWrapper {
   display: flex;
+  flex-direction: column;
 }
 @media only screen and (orientation: landscape) {
   .Homepage__linksWrapper {
     gap: var(--space-l);
-    flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
   }
 }
 @media only screen and (orientation: portrait) {
   .Homepage__linksWrapper {
-    flex-direction: column;
-    justify-content: center;
-    row-gap: var(--space-l);
+    row-gap: var(--space-m);
   }
 }
 .Homepage__divider {
@@ -607,23 +588,30 @@ body[data-theme=light] {
 }
 .Homepage__link {
   text-decoration: none;
-  color: var(--color1-40);
+  color: var(--color1-80);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .Homepage__link:hover {
-  color: var(--color1-80);
+  color: var(--color1-90);
 }
 .Homepage__localName {
-  font-size: var(--step-3);
-  margin: 0 0 var(--space-xs);
+  margin-block: var(--space-3xs);
+}
+@media only screen and (orientation: landscape) {
+  .Homepage__localName {
+    font-size: var(--step-3);
+  }
+}
+@media only screen and (orientation: portrait) {
+  .Homepage__localName {
+    font-size: var(--step-6);
+  }
 }
 .Homepage__localName--ar {
   font-family: var(--serif-AR);
   font-weight: 400;
-  direction: rtl;
 }
 .Homepage__localName--gr {
   font-family: var(--serif-GR);
@@ -632,7 +620,6 @@ body[data-theme=light] {
 .Homepage__localName--jp {
   font-family: var(--serif-JP);
   font-weight: 500;
-  scale: 0.8;
 }
 .Homepage__englishName {
   margin: 0;
@@ -663,8 +650,8 @@ body[data-theme=light] {
   }
 }
 .navToggle__icon {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 .navToggle__icon path {
   stroke: var(--color1-80);
@@ -716,8 +703,8 @@ body[data-theme=light] {
 }
 
 .themeToggle {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background: none;
   border: none;
   cursor: pointer;
@@ -733,7 +720,6 @@ body[data-theme=light] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: var(--space-s);
   background: var(--color1-80);
   height: 100%;
@@ -819,8 +805,8 @@ body[data-theme=light] {
 @media only screen and (orientation: landscape) {
   .sideBar {
     flex-direction: column;
-    width: calc(var(--space-xl) * 5);
-    padding-inline: var(--space-l);
+    width: 20vw;
+    padding-inline: var(--space-m);
     align-items: center;
     justify-content: center;
     border-inline-start: 0.1px solid var(--color1-40);
@@ -848,7 +834,6 @@ body[data-theme=light] {
   .sideBar__Title {
     text-align: center;
     font-size: var(--step-4);
-    width: calc(var(--space-xl) * 5);
   }
 }
 @media only screen and (orientation: portrait) {
@@ -1027,6 +1012,17 @@ body[data-theme=light] {
   font-style: normal;
   font-family: var(--phonetics);
   margin-block: var(--space-xs);
+  animation-name: move;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes move {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 .symbolSingle__phonetics:after, .symbolSingle__phonetics:before {
   content: " / ";
@@ -1078,6 +1074,7 @@ body[data-theme=light] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 80vw;
 }
 @media only screen and (orientation: landscape) {
   .symbolsPanel {
@@ -1550,6 +1547,61 @@ body[data-theme=light] {
 
 .lang__gr .symbolSingle:nth-of-type(24) .symbolSingle__symbol {
   color: hsl(0, 50%, 50%) !important;
+}
+
+.RootCard__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 80vw;
+  padding-inline-start: var(--space-xl);
+}
+.RootCard__main {
+  font-size: var(--step-4);
+  font-family: var(--serif-EN);
+}
+.RootCard__main--sans {
+  font-family: var(--sans-EN);
+}
+.RootCard__card {
+  width: 26.6666666667vw;
+  padding-inline: var(--space-l);
+  color: var(--color1-10);
+}
+.RootCard__card:nth-of-type(1) {
+  color: hsl(160, 50%, 50%);
+}
+.RootCard__card:nth-of-type(1) em:before {
+  background: hsl(160, 50%, 50%);
+}
+.RootCard__card:nth-of-type(2) {
+  color: hsl(280, 50%, 50%);
+}
+.RootCard__card:nth-of-type(2) em:before {
+  background: hsl(280, 50%, 50%);
+}
+.RootCard__card:nth-of-type(3) {
+  color: hsl(40, 50%, 50%);
+}
+.RootCard__card:nth-of-type(3) em:before {
+  background: hsl(40, 50%, 50%);
+}
+.RootCard__example {
+  font-size: var(--step-2);
+  font-weight: 400;
+}
+.RootCard__example em {
+  font-style: normal;
+  position: relative;
+}
+.RootCard__example em::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  background: white;
+  height: 3px;
+  width: 100%;
 }
 
 #root {
