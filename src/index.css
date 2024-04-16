@@ -319,19 +319,19 @@ template {
 :root {
   --sans-JP: "Noto Sans JP", sans-serif;
   --serif-JP: "Noto Serif JP", serif;
-  --serif-GR: "EB Garamond", serif;
   --sans-GR: "Fira Sans", sans-serif;
+  --serif-GR: "EB Garamond", serif;
   --sans-HI: "Noto Sans", sans-serif;
   --serif-HI: "Noto Serif Devanagari", serif;
   --sans-RU: "Fira Sans", sans-serif;
   --serif-RU: "EB Garamond", serif;
-  --serif-AR: "Noto Naskh Arabic", serif;
   --sans-AR: "Noto Sans Arabic", sans-serif;
+  --serif-AR: "Noto Naskh Arabic", serif;
   --sans-EN: "Mukta", sans-serif;
-  --serif-EN: "Marcellus", serif;
-  --display: "Playfair Display", serif;
-  --serif: "Noto Naskh Arabic", serif;
+  --serif-EN: "Gentium Plus", serif;
   --sans: "Roboto Condensed", sans-serif;
+  --serif: "Noto Naskh Arabic", serif;
+  --display: "Playfair Display", serif;
   --number: "Gill Sans", "Gill Sans MT", calibri, "Trebuchet MS", sans-serif;
   --phonetics: "Voces", sans-serif;
 }
@@ -1551,10 +1551,9 @@ body[data-theme=light] {
 
 .RootCard__wrapper {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
+  row-gap: var(--space-l);
   width: 80vw;
-  padding-inline-start: var(--space-xl);
 }
 .RootCard__main {
   font-size: var(--step-4);
@@ -1563,32 +1562,156 @@ body[data-theme=light] {
 .RootCard__main--sans {
   font-family: var(--sans-EN);
 }
-.RootCard__card {
-  width: 26.6666666667vw;
+.RootCard__meaning {
+  color: var(--color1-90);
+  font-family: var(--sans-EN);
+  padding-inline: var(--space-l);
+  width: fit-content;
+  padding-block: var(--space-xs);
+  font-size: var(--step-1);
+  position: relative;
+}
+.RootCard__meaning::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 0.2em;
+}
+.RootCard__variations {
+  display: flex;
+}
+.RootCard__root {
+  font-size: var(--step-2);
+  font-family: var(--serif-EN);
+  margin-block: 0;
+  padding-inline-start: 20px;
+}
+.RootCard__lang {
+  font-size: var(--step-0);
+  font-family: var(--sans-EN);
+  margin-block: 0;
+  border-radius: 50%;
+  position: relative;
+  padding-inline-start: 5px;
+}
+.RootCard__lang::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 0.1px;
+  height: 60px;
+  z-index: -1;
+}
+.RootCard__variation {
   padding-inline: var(--space-l);
   color: var(--color1-10);
 }
-.RootCard__card:nth-of-type(1) {
+.RootCard__variation:nth-of-type(1) {
   color: hsl(160, 50%, 50%);
 }
-.RootCard__card:nth-of-type(1) em:before {
+.RootCard__variation:nth-of-type(1) .RootCard__lang::before {
+  background-color: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(1) em:before {
   background: hsl(160, 50%, 50%);
 }
-.RootCard__card:nth-of-type(2) {
+.RootCard__variation:nth-of-type(2) {
   color: hsl(280, 50%, 50%);
 }
-.RootCard__card:nth-of-type(2) em:before {
+.RootCard__variation:nth-of-type(2) .RootCard__lang::before {
+  background-color: hsl(280, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(2) em:before {
   background: hsl(280, 50%, 50%);
 }
-.RootCard__card:nth-of-type(3) {
+.RootCard__variation:nth-of-type(3) {
   color: hsl(40, 50%, 50%);
 }
-.RootCard__card:nth-of-type(3) em:before {
+.RootCard__variation:nth-of-type(3) .RootCard__lang::before {
+  background-color: hsl(40, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(3) em:before {
   background: hsl(40, 50%, 50%);
 }
+.RootCard__variation:nth-of-type(4) {
+  color: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(4) .RootCard__lang::before {
+  background-color: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(4) em:before {
+  background: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(5) {
+  color: hsl(280, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(5) .RootCard__lang::before {
+  background-color: hsl(280, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(5) em:before {
+  background: hsl(280, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(6) {
+  color: hsl(40, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(6) .RootCard__lang::before {
+  background-color: hsl(40, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(6) em:before {
+  background: hsl(40, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(7) {
+  color: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(7) .RootCard__lang::before {
+  background-color: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(7) em:before {
+  background: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(8) {
+  color: hsl(280, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(8) .RootCard__lang::before {
+  background-color: hsl(280, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(8) em:before {
+  background: hsl(280, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(9) {
+  color: hsl(40, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(9) .RootCard__lang::before {
+  background-color: hsl(40, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(9) em:before {
+  background: hsl(40, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(10) {
+  color: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(10) .RootCard__lang::before {
+  background-color: hsl(160, 50%, 50%);
+}
+.RootCard__variation:nth-of-type(10) em:before {
+  background: hsl(160, 50%, 50%);
+}
+.RootCard__examples {
+  line-height: 1.8em;
+  padding: 8px;
+}
 .RootCard__example {
-  font-size: var(--step-2);
+  color: var(--color1-80);
+  font-family: var(--serif-EN);
+  font-size: var(--step-1);
+  letter-spacing: 0.05rem;
   font-weight: 400;
+  list-style-type: "-";
+  position: relative;
+  padding: 0 0 0 10px;
 }
 .RootCard__example em {
   font-style: normal;
@@ -1597,10 +1720,10 @@ body[data-theme=light] {
 .RootCard__example em::before {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: 3px;
   left: 0;
-  background: white;
-  height: 3px;
+  height: 2px;
+  z-index: -1;
   width: 100%;
 }
 

@@ -1,8 +1,58 @@
 [
     {
-        "id": 1,
-        "meaning": "",
-        "variation": [{ "en": "crypto" }, { "es": "" }]
-        // "example": [{"en"},""]
+        "id": "1",
+        "origin": "Γράφ",
+        "origin_lang": "gr",
+        "origin_meaning": "write, inscribe, draw, or relate to writing or drawing",
+        "variations": [
+            {
+                "lang": "gr",
+                "form": "γραφ",
+                "examples": ["φωτογραφία", "γραφικό"]
+            },
+            {
+                "lang": "ru",
+                "form": "граф",
+                "examples": ["фотография"]
+            },
+            {
+                "lang": "en",
+                "form": "graph",
+                "examples": ["photography", "graphic"]
+            },
+            {
+                "lang": "es",
+                "form": "graf",
+                "examples": ["fotografía", "gráfica"]
+            },
+            {
+                "lang": "fr",
+                "form": "graph",
+                "examples": ["photographie"]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "origin": "Παθ",
+        "origin_lang": "gr",
+        "origin_meaning": "feeling, suffering, or experiencing",
+        "variations": [
+            {
+                "lang": "gr",
+                "form": "παθ",
+                "examples": ["παθολογία ", "κοινωνιοπαθητικός", "συμπάθεια"]
+            },
+            {
+                "lang": "ru",
+                "form": "пат",
+                "examples": ["патология", "социопат", "симпатия"]
+            },
+            {
+                "lang": "en",
+                "form": "path",
+                "examples": ["pathology", "sociopath", "sympathy"]
+            }
+        ]
     }
 ]
